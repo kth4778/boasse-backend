@@ -110,7 +110,10 @@ public class NoticeController {
      * 비밀번호 검증 메서드
      */
     private void checkPassword(String password) {
-        if (password == null || !ADMIN_PASSWORD.equals(password)) {
+        // 디버깅을 위해 로그 출력 (운영 환경에서는 비밀번호 로깅 주의)
+        log.info("Received password: '{}', Expected: '{}'", password, ADMIN_PASSWORD);
+        
+        if (password == null || !ADMIN_PASSWORD.equals(password.trim())) {
             throw new ForbiddenException("관리자 비밀번호가 일치하지 않습니다.");
         }
     }

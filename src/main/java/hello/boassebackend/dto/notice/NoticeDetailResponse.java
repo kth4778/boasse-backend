@@ -1,5 +1,6 @@
 package hello.boassebackend.dto.notice;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import hello.boassebackend.domain.entity.Notice;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +30,8 @@ public class NoticeDetailResponse {
         private String author;
         private Integer viewCount;
         private List<AttachmentDto> attachments;
+
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
 
         public static Data from(Notice notice) {

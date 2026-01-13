@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: 공지사항 서비스 API
-  description: 한국교통대학교 공지사항 관리 시스템을 위한 API 명세서입니다.
+  description: BOAS 공지사항 관리 시스템을 위한 API 명세서입니다.
   version: 1.0.1
 
 servers:
