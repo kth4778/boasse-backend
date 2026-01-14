@@ -1,4 +1,4 @@
-package hello.boassebackend.exception;
+package hello.boassebackend.global.exception;
 
 public class ForbiddenException extends RuntimeException {
     public ForbiddenException(String message) {

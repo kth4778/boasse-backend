@@ -1,6 +1,6 @@
-package hello.boassebackend.dto.notice;
+package hello.boassebackend.domain.notice.dto;
 
-import hello.boassebackend.domain.entity.Attachment;
+import hello.boassebackend.domain.notice.entity.Attachment;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

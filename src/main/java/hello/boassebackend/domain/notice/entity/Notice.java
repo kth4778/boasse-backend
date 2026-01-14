@@ -1,4 +1,4 @@
-package hello.boassebackend.domain.entity;
+package hello.boassebackend.domain.notice.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

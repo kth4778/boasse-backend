@@ -1,6 +1,6 @@
-package hello.boassebackend.exception;
+package hello.boassebackend.global.exception;
 
-import hello.boassebackend.dto.common.ErrorResponse;
+import hello.boassebackend.global.common.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

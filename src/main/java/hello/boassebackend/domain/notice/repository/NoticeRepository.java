@@ -1,6 +1,6 @@
-package hello.boassebackend.repository;
+package hello.boassebackend.domain.notice.repository;
 
-import hello.boassebackend.domain.entity.Notice;
+import hello.boassebackend.domain.notice.entity.Notice;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface NoticeRepository extends JpaRepository<Notice, Long> {

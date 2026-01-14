@@ -1,6 +1,6 @@
-package hello.boassebackend.service;
+package hello.boassebackend.global.util;
 
-import hello.boassebackend.domain.entity.Attachment;
+import hello.boassebackend.domain.notice.entity.Attachment;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

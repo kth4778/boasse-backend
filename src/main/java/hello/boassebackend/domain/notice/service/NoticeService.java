@@ -1,11 +1,12 @@
-package hello.boassebackend.service;
+package hello.boassebackend.domain.notice.service;
 
-import hello.boassebackend.domain.entity.Attachment;
-import hello.boassebackend.domain.entity.Notice;
-import hello.boassebackend.dto.common.Pagination;
-import hello.boassebackend.dto.notice.*;
-import hello.boassebackend.repository.AttachmentRepository;
-import hello.boassebackend.repository.NoticeRepository;
+import hello.boassebackend.domain.notice.entity.Attachment;
+import hello.boassebackend.domain.notice.entity.Notice;
+import hello.boassebackend.global.common.Pagination;
+import hello.boassebackend.domain.notice.dto.*;
+import hello.boassebackend.domain.notice.repository.AttachmentRepository;
+import hello.boassebackend.domain.notice.repository.NoticeRepository;
+import hello.boassebackend.global.util.FileStore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -60,12 +61,11 @@ public class NoticeService {
     }
 
     /**
-     * 공지사항 상세 조회
+     * 공지사항 상세 조회 (조회수 증가 O)
      */
     @Transactional
-    public NoticeDetailResponse getNoticeDetail(Long id) {
-        Notice notice = noticeRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 공지사항을 찾을 수 없습니다. id=" + id));
+    public NoticeDetailResponse getNoticeDetailWithViewCount(Long id) {
+        Notice notice = findNoticeByIdOrThrow(id);
 
         // 조회수 증가
         notice.incrementViewCount();
@@ -74,6 +74,24 @@ public class NoticeService {
                 .success(true)
                 .data(NoticeDetailResponse.Data.from(notice))
                 .build();
+    }
+
+    /**
+     * 공지사항 상세 조회 (조회수 증가 X)
+     * 수정, 생성 후 응답용
+     */
+    public NoticeDetailResponse getNoticeDetail(Long id) {
+        Notice notice = findNoticeByIdOrThrow(id);
+
+        return NoticeDetailResponse.builder()
+                .success(true)
+                .data(NoticeDetailResponse.Data.from(notice))
+                .build();
+    }
+
+    private Notice findNoticeByIdOrThrow(Long id) {
+        return noticeRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 공지사항을 찾을 수 없습니다. id=" + id));
     }
 
     /**
@@ -108,8 +126,7 @@ public class NoticeService {
      */
     @Transactional
     public Long updateNotice(Long id, NoticeUpdateRequest request) throws IOException {
-        Notice notice = noticeRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 공지사항을 찾을 수 없습니다. id=" + id));
+        Notice notice = findNoticeByIdOrThrow(id);
 
         // 1. 기본 정보 수정
         notice.update(request.getTitle(), request.getContent());
@@ -158,8 +175,7 @@ public class NoticeService {
      */
     @Transactional
     public void deleteNotice(Long id) {
-        Notice notice = noticeRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 공지사항을 찾을 수 없습니다. id=" + id));
+        Notice notice = findNoticeByIdOrThrow(id);
 
         // 모든 첨부파일 물리적 삭제
         for (Attachment attachment : notice.getAttachments()) {

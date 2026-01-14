@@ -1,6 +1,6 @@
-package hello.boassebackend.dto.notice;
+package hello.boassebackend.domain.notice.dto;
 
-import hello.boassebackend.dto.common.Pagination;
+import hello.boassebackend.global.common.Pagination;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

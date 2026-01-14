@@ -1,4 +1,4 @@
-package hello.boassebackend.dto.common;
+package hello.boassebackend.global.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package hello.boassebackend.dto.notice;
+package hello.boassebackend.domain.notice.dto;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;

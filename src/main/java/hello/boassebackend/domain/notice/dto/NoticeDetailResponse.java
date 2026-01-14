@@ -1,7 +1,7 @@
-package hello.boassebackend.dto.notice;
+package hello.boassebackend.domain.notice.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import hello.boassebackend.domain.entity.Notice;
+import hello.boassebackend.domain.notice.entity.Notice;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
