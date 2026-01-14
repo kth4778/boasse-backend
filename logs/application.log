@@ -112,3 +112,8 @@
 2026-01-14 09:55:26.889 DEBUG 27200 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : [c8708b6f] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
 2026-01-14 09:55:26.889 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [c8708b6f] binding parameter (1:INTEGER) <- [0]
 2026-01-14 09:55:26.889 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [c8708b6f] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:55:47.689  INFO 27200 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : [] Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-14 09:55:48.067  INFO 27200 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : [] Graceful shutdown complete
+2026-01-14 09:55:48.071  INFO 27200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : [] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-14 09:55:48.073  INFO 27200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [] HikariPool-1 - Shutdown initiated...
+2026-01-14 09:55:48.080  INFO 27200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [] HikariPool-1 - Shutdown completed.
