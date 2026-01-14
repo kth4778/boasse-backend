@@ -1,0 +1,114 @@
+2026-01-14 09:41:49.230  INFO 27200 --- [main] h.b.BoasseBackendApplication             : [] Starting BoasseBackendApplication using Java 17.0.15 with PID 27200 (C:\BoasseProject\boasse-backend\build\classes\java\main started by cnblu in C:\BoasseProject\boasse-backend)
+2026-01-14 09:41:49.233  INFO 27200 --- [main] h.b.BoasseBackendApplication             : [] No active profile set, falling back to 1 default profile: "default"
+2026-01-14 09:41:49.838  INFO 27200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-14 09:41:49.893  INFO 27200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [] Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-01-14 09:41:50.411  INFO 27200 --- [main] o.s.boot.tomcat.TomcatWebServer          : [] Tomcat initialized with port 8080 (http)
+2026-01-14 09:41:50.426  INFO 27200 --- [main] o.apache.catalina.core.StandardService   : [] Starting service [Tomcat]
+2026-01-14 09:41:50.427  INFO 27200 --- [main] o.apache.catalina.core.StandardEngine    : [] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-14 09:41:50.501  INFO 27200 --- [main] b.w.c.s.WebApplicationContextInitializer : [] Root WebApplicationContext: initialization completed in 1228 ms
+2026-01-14 09:41:50.682  INFO 27200 --- [main] org.hibernate.orm.jpa                    : [] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-14 09:41:50.765  INFO 27200 --- [main] org.hibernate.orm.core                   : [] HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-14 09:41:51.321  INFO 27200 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : [] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-14 09:41:51.367  INFO 27200 --- [main] com.zaxxer.hikari.HikariDataSource       : [] HikariPool-1 - Starting...
+2026-01-14 09:41:51.708  INFO 27200 --- [main] com.zaxxer.hikari.pool.HikariPool        : [] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45273d40
+2026-01-14 09:41:51.711  INFO 27200 --- [main] com.zaxxer.hikari.HikariDataSource       : [] HikariPool-1 - Start completed.
+2026-01-14 09:41:51.814  INFO 27200 --- [main] org.hibernate.orm.connections.pooling    : [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/boas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.3
+	Default catalog/schema: boas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-14 09:41:52.904  INFO 27200 --- [main] org.hibernate.orm.core                   : [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-14 09:41:52.993  INFO 27200 --- [main] j.LocalContainerEntityManagerFactoryBean : [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-14 09:41:53.073  INFO 27200 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : [] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-14 09:41:53.261  WARN 27200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-14 09:41:53.568  INFO 27200 --- [main] o.s.boot.tomcat.TomcatWebServer          : [] Tomcat started on port 8080 (http) with context path '/'
+2026-01-14 09:41:53.572  INFO 27200 --- [main] h.b.BoasseBackendApplication             : [] Started BoasseBackendApplication in 4.955 seconds (process running for 5.613)
+2026-01-14 09:42:00.426  INFO 27200 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-14 09:42:00.427  INFO 27200 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [] Initializing Servlet 'dispatcherServlet'
+2026-01-14 09:42:00.429  INFO 27200 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [] Completed initialization in 2 ms
+2026-01-14 09:42:00.625 DEBUG 27200 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : [730d99bb] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:42:00.626 TRACE 27200 --- [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : [730d99bb] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:42:00.725 DEBUG 27200 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : [730d99bb] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:42:00.726 TRACE 27200 --- [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : [730d99bb] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:42:00.973 DEBUG 27200 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : [2197e93c] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:42:00.974 TRACE 27200 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : [2197e93c] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:42:00.980 DEBUG 27200 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : [2197e93c] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:42:00.981 TRACE 27200 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : [2197e93c] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:42:33.560 DEBUG 27200 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : [719ac540] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:42:33.561 TRACE 27200 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : [719ac540] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:42:33.561 TRACE 27200 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : [719ac540] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:42:33.572 DEBUG 27200 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : [719ac540] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:42:33.573 TRACE 27200 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : [719ac540] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:42:33.594 DEBUG 27200 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : [d78d5149] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:42:33.595 TRACE 27200 --- [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : [d78d5149] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:42:33.595 TRACE 27200 --- [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : [d78d5149] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:42:33.597 DEBUG 27200 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : [d78d5149] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:42:33.598 TRACE 27200 --- [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : [d78d5149] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:41.901 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [238de6fc] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:53:41.901 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [238de6fc] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:41.904 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [238de6fc] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:53:41.905 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [238de6fc] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:41.922 DEBUG 27200 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : [47d8b380] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:53:41.922 TRACE 27200 --- [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : [47d8b380] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:41.924 DEBUG 27200 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : [47d8b380] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:53:41.925 TRACE 27200 --- [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : [47d8b380] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:43.925 DEBUG 27200 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : [25083051] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:53:43.926 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [25083051] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:43.929 DEBUG 27200 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : [25083051] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:53:43.930 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [25083051] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:43.948 DEBUG 27200 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : [86d33203] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:53:43.950 TRACE 27200 --- [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : [86d33203] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:53:43.952 DEBUG 27200 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : [86d33203] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:53:43.953 TRACE 27200 --- [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : [86d33203] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:54:06.343 DEBUG 27200 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : [45be9b9b] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:54:06.343 TRACE 27200 --- [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : [45be9b9b] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:54:06.344 TRACE 27200 --- [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : [45be9b9b] binding parameter (2:INTEGER) <- [3]
+2026-01-14 09:54:06.346 DEBUG 27200 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : [45be9b9b] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:54:06.347 TRACE 27200 --- [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : [45be9b9b] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:54:06.363 DEBUG 27200 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : [2a4cbe68] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:54:06.364 TRACE 27200 --- [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : [2a4cbe68] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:54:06.364 TRACE 27200 --- [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : [2a4cbe68] binding parameter (2:INTEGER) <- [3]
+2026-01-14 09:54:06.366 DEBUG 27200 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : [2a4cbe68] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:54:06.366 TRACE 27200 --- [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : [2a4cbe68] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:54:20.592 DEBUG 27200 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : [e71b8371] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:54:20.592 TRACE 27200 --- [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : [e71b8371] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:54:20.592 TRACE 27200 --- [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : [e71b8371] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:54:20.595 DEBUG 27200 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : [e71b8371] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:54:20.595 TRACE 27200 --- [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : [e71b8371] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:54:20.610 DEBUG 27200 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : [e3e9bc98] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:54:20.611 TRACE 27200 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : [e3e9bc98] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:54:20.612 TRACE 27200 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : [e3e9bc98] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:54:20.614 DEBUG 27200 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : [e3e9bc98] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:54:20.615 TRACE 27200 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : [e3e9bc98] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:19.480 DEBUG 27200 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : [ffbb4b6d] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:55:19.481 TRACE 27200 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : [ffbb4b6d] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:19.484 DEBUG 27200 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : [ffbb4b6d] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:55:19.485 TRACE 27200 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : [ffbb4b6d] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:19.501 DEBUG 27200 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : [ba72b4de] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:55:19.502 TRACE 27200 --- [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : [ba72b4de] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:19.504 DEBUG 27200 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : [ba72b4de] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:55:19.504 TRACE 27200 --- [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : [ba72b4de] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:26.060  INFO 27200 --- [http-nio-8080-exec-5] h.b.d.n.controller.NoticeController      : [9f13742c] Received password: 'admin1234', Expected: 'admin1234'
+2026-01-14 09:55:26.063 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [9f13742c] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 where n1_0.id=?
+2026-01-14 09:55:26.064 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [9f13742c] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:26.066 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [9f13742c] select a1_0.notice_id,a1_0.id,a1_0.filename,a1_0.original_name,a1_0.size,a1_0.url from attachment a1_0 where a1_0.notice_id=?
+2026-01-14 09:55:26.067 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [9f13742c] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:26.148 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [9f13742c] delete from attachment where id=?
+2026-01-14 09:55:26.149 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [9f13742c] binding parameter (1:BIGINT) <- [10]
+2026-01-14 09:55:26.156 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [9f13742c] delete from attachment where id=?
+2026-01-14 09:55:26.157 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [9f13742c] binding parameter (1:BIGINT) <- [11]
+2026-01-14 09:55:26.159 DEBUG 27200 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : [9f13742c] delete from notice where id=?
+2026-01-14 09:55:26.159 TRACE 27200 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : [9f13742c] binding parameter (1:BIGINT) <- [7]
+2026-01-14 09:55:26.873 DEBUG 27200 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : [ada90db0] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:55:26.873 TRACE 27200 --- [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : [ada90db0] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:55:26.873 TRACE 27200 --- [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : [ada90db0] binding parameter (2:INTEGER) <- [10]
+2026-01-14 09:55:26.889 DEBUG 27200 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : [c8708b6f] select n1_0.id,n1_0.author,n1_0.content,n1_0.created_at,n1_0.title,n1_0.view_count from notice n1_0 order by n1_0.created_at desc limit ?,?
+2026-01-14 09:55:26.889 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [c8708b6f] binding parameter (1:INTEGER) <- [0]
+2026-01-14 09:55:26.889 TRACE 27200 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : [c8708b6f] binding parameter (2:INTEGER) <- [10]

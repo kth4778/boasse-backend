@@ -36,7 +36,11 @@ public class NoticeController {
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int limit) {
         
+        log.info("게시물 목록 조회 요청: page={}, limit={}", page, limit);
+        
         NoticeListResponse response = noticeService.getNotices(page, limit);
+        
+        log.info("GET /api/v1/notices - 200 OK");
         return ResponseEntity.ok(response);
     }
 
@@ -49,6 +53,8 @@ public class NoticeController {
             @PathVariable Long id,
             jakarta.servlet.http.HttpServletRequest request,
             jakarta.servlet.http.HttpServletResponse response) {
+
+        log.info("게시물 조회 요청: noticeId={}", id);
 
         String cookieName = "view_log_" + id;
         boolean isVisited = false;
@@ -85,6 +91,7 @@ public class NoticeController {
             responseDto = noticeService.getNoticeDetail(id);
         }
 
+        log.info("GET /api/v1/notices/{} - 200 OK", id);
         return ResponseEntity.ok(responseDto);
     }
 
@@ -95,12 +102,16 @@ public class NoticeController {
     public ResponseEntity<NoticeDetailResponse> createNotice(
             @ModelAttribute NoticeCreateRequest request) throws IOException {
         
+        int fileCount = (request.getFiles() != null) ? request.getFiles().size() : 0;
+        log.info("게시물 작성 요청: title=\"{}\", attachmentCount={}", request.getTitle(), fileCount);
+        
         checkPassword(request.getPassword());
 
         Long noticeId = noticeService.createNotice(request, "Admin");
         
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
         
+        log.info("POST /api/v1/notices - 201 CREATED");
         return ResponseEntity.created(URI.create("/api/v1/notices/" + noticeId))
                 .body(response);
     }
@@ -113,11 +124,14 @@ public class NoticeController {
             @PathVariable Long id,
             @ModelAttribute NoticeUpdateRequest request) throws IOException {
         
+        log.info("게시물 수정 요청: noticeId={}", id);
+        
         checkPassword(request.getPassword());
 
         Long noticeId = noticeService.updateNotice(id, request);
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
 
+        log.info("PUT /api/v1/notices/{} - 200 OK", id);
         return ResponseEntity.ok(response);
     }
 
@@ -128,6 +142,8 @@ public class NoticeController {
     public ResponseEntity<Map<String, Object>> deleteNotice(
             @PathVariable Long id,
             @RequestParam String password) { // 쿼리 파라미터로 비밀번호 수신
+        
+        log.info("게시물 삭제 요청: noticeId={}", id);
         
         checkPassword(password);
 
@@ -142,6 +158,7 @@ public class NoticeController {
         data.put("deletedAt", LocalDateTime.now());
         response.put("data", data);
 
+        log.info("DELETE /api/v1/notices/{} - 200 OK", id);
         return ResponseEntity.ok(response);
     }
 
@@ -149,10 +166,11 @@ public class NoticeController {
      * 비밀번호 검증 메서드
      */
     private void checkPassword(String password) {
-        // 디버깅을 위해 로그 출력 (운영 환경에서는 비밀번호 로깅 주의)
-        log.info("Received password: '{}', Expected: '{}'", password, ADMIN_PASSWORD);
+        // 디버깅을 위해 로그 출력 (운영 환경에서는 비밀번호 로깅 주의 - 마스킹 필요하나 여기선 생략)
+        // log.debug("Received password check"); 
         
         if (password == null || !ADMIN_PASSWORD.equals(password.trim())) {
+            log.warn("권한 없는 접근 시도 (비밀번호 불일치)");
             throw new ForbiddenException("관리자 비밀번호가 일치하지 않습니다.");
         }
     }
