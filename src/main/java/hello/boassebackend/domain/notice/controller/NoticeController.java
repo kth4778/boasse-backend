@@ -34,13 +34,12 @@ public class NoticeController {
     @GetMapping
     public ResponseEntity<NoticeListResponse> getNotices(
             @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int limit) {
+            @RequestParam(defaultValue = "10") int limit,
+            jakarta.servlet.http.HttpServletRequest request) {
         
-        log.info("게시물 목록 조회 요청: page={}, limit={}", page, limit);
+        request.setAttribute("logData", "page=" + page + ", limit=" + limit);
         
         NoticeListResponse response = noticeService.getNotices(page, limit);
-        
-        log.info("GET /api/v1/notices - 200 OK");
         return ResponseEntity.ok(response);
     }
 
@@ -53,8 +52,6 @@ public class NoticeController {
             @PathVariable Long id,
             jakarta.servlet.http.HttpServletRequest request,
             jakarta.servlet.http.HttpServletResponse response) {
-
-        log.info("게시물 조회 요청: noticeId={}", id);
 
         String cookieName = "view_log_" + id;
         boolean isVisited = false;
@@ -91,7 +88,7 @@ public class NoticeController {
             responseDto = noticeService.getNoticeDetail(id);
         }
 
-        log.info("GET /api/v1/notices/{} - 200 OK", id);
+        request.setAttribute("logData", "noticeId=" + id + ", visited=" + isVisited);
         return ResponseEntity.ok(responseDto);
     }
 
@@ -100,18 +97,16 @@ public class NoticeController {
      */
     @PostMapping
     public ResponseEntity<NoticeDetailResponse> createNotice(
-            @ModelAttribute NoticeCreateRequest request) throws IOException {
+            @ModelAttribute NoticeCreateRequest requestDto,
+            jakarta.servlet.http.HttpServletRequest request) throws IOException {
         
-        int fileCount = (request.getFiles() != null) ? request.getFiles().size() : 0;
-        log.info("게시물 작성 요청: title=\"{}\", attachmentCount={}", request.getTitle(), fileCount);
-        
-        checkPassword(request.getPassword());
+        checkPassword(requestDto.getPassword());
 
-        Long noticeId = noticeService.createNotice(request, "Admin");
+        Long noticeId = noticeService.createNotice(requestDto, "Admin");
         
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
         
-        log.info("POST /api/v1/notices - 201 CREATED");
+        request.setAttribute("logData", "noticeId=" + noticeId + ", title=" + requestDto.getTitle());
         return ResponseEntity.created(URI.create("/api/v1/notices/" + noticeId))
                 .body(response);
     }
@@ -122,16 +117,15 @@ public class NoticeController {
     @PutMapping("/{id}")
     public ResponseEntity<NoticeDetailResponse> updateNotice(
             @PathVariable Long id,
-            @ModelAttribute NoticeUpdateRequest request) throws IOException {
+            @ModelAttribute NoticeUpdateRequest requestDto,
+            jakarta.servlet.http.HttpServletRequest request) throws IOException {
         
-        log.info("게시물 수정 요청: noticeId={}", id);
-        
-        checkPassword(request.getPassword());
+        checkPassword(requestDto.getPassword());
 
-        Long noticeId = noticeService.updateNotice(id, request);
+        Long noticeId = noticeService.updateNotice(id, requestDto);
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
 
-        log.info("PUT /api/v1/notices/{} - 200 OK", id);
+        request.setAttribute("logData", "noticeId=" + noticeId);
         return ResponseEntity.ok(response);
     }
 
@@ -141,9 +135,8 @@ public class NoticeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> deleteNotice(
             @PathVariable Long id,
-            @RequestParam String password) { // 쿼리 파라미터로 비밀번호 수신
-        
-        log.info("게시물 삭제 요청: noticeId={}", id);
+            @RequestParam String password,
+            jakarta.servlet.http.HttpServletRequest request) { 
         
         checkPassword(password);
 
@@ -158,7 +151,7 @@ public class NoticeController {
         data.put("deletedAt", LocalDateTime.now());
         response.put("data", data);
 
-        log.info("DELETE /api/v1/notices/{} - 200 OK", id);
+        request.setAttribute("logData", "noticeId=" + id);
         return ResponseEntity.ok(response);
     }
 

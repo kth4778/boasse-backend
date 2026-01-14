@@ -36,13 +36,9 @@ public class NoticeService {
      * 공지사항 목록 조회
      */
     public NoticeListResponse getNotices(int page, int limit) {
-        log.info("게시물 목록 조회 시작");
-
         // page는 0부터 시작하므로 1을 빼줍니다.
         Pageable pageable = PageRequest.of(page - 1, limit, Sort.by(Sort.Direction.DESC, "createdAt"));
         Page<Notice> noticePage = noticeRepository.findAll(pageable);
-
-        log.info("게시물 목록 조회 완료: totalCount={}", noticePage.getTotalElements());
 
         List<NoticeItem> noticeItems = noticePage.getContent().stream()
                 .map(NoticeItem::from)
@@ -78,8 +74,6 @@ public class NoticeService {
         notice.incrementViewCount();
         
         log.debug("조회수 증가: noticeId={}, {} -> {}", id, oldViewCount, notice.getViewCount());
-        log.info("게시물 조회 성공: noticeId={}, title=\"{}\", viewCount={}", 
-                 id, notice.getTitle(), notice.getViewCount());
 
         return NoticeDetailResponse.builder()
                 .success(true)
@@ -93,7 +87,6 @@ public class NoticeService {
      */
     public NoticeDetailResponse getNoticeDetail(Long id) {
         Notice notice = findNoticeByIdOrThrow(id);
-        log.debug("게시물 조회 (조회수 증가 X): noticeId={}", id);
 
         return NoticeDetailResponse.builder()
                 .success(true)
@@ -114,8 +107,6 @@ public class NoticeService {
      */
     @Transactional
     public Long createNotice(NoticeCreateRequest request, String author) throws IOException {
-        log.info("게시물 작성 시작: author={}", author);
-
         Notice notice = Notice.builder()
                 .title(request.getTitle())
                 .content(request.getContent())
@@ -146,8 +137,6 @@ public class NoticeService {
      */
     @Transactional
     public Long updateNotice(Long id, NoticeUpdateRequest request) throws IOException {
-        log.info("게시물 수정 시작: noticeId={}", id);
-
         Notice notice = findNoticeByIdOrThrow(id);
 
         log.debug("변경 전: title=\"{}\"", notice.getTitle());
@@ -201,12 +190,10 @@ public class NoticeService {
      */
     @Transactional
     public void deleteNotice(Long id) {
-        log.info("게시물 삭제 시작: noticeId={}", id);
-
         Notice notice = findNoticeByIdOrThrow(id);
-        int attachmentCount = notice.getAttachments().size();
 
         // 모든 첨부파일 물리적 삭제
+        int attachmentCount = notice.getAttachments().size();
         if (attachmentCount > 0) {
             log.debug("첨부파일 삭제: attachmentCount={}", attachmentCount);
             for (Attachment attachment : notice.getAttachments()) {

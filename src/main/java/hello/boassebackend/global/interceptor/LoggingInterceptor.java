@@ -32,10 +32,19 @@ public class LoggingInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         int status = response.getStatus();
         
+        // 컨트롤러에서 넘겨준 추가 정보 (예: originalName=file.png, size=15KB)
+        String extraInfo = (String) request.getAttribute("logData");
+        String logSuffix = (extraInfo != null) ? " | " + extraInfo : "";
+        
         if (ex != null) {
-            log.error("{} {} - {} Failed: {} ({}ms)", method, uri, status, ex.getClass().getSimpleName(), duration);
+            log.error("{} {} - {} Failed: {} ({}ms){}", method, uri, status, ex.getClass().getSimpleName(), duration, logSuffix);
         } else {
-            log.info("{} {} - {} OK ({}ms)", method, uri, status, duration);
+            // 400번대 이상 에러 응답인 경우 ERROR 레벨로, 정상인 경우 INFO 레벨로
+            if (status >= 400) {
+                 log.error("{} {} - {} ({}ms){}", method, uri, status, duration, logSuffix);
+            } else {
+                 log.info("{} {} - {} OK ({}ms){}", method, uri, status, duration, logSuffix);
+            }
         }
     }
 }

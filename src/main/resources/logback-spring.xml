@@ -6,13 +6,13 @@
     <property name="ERR_LOG_FILE_NAME" value="error"/>
     
     <!-- 콘솔 출력 패턴 (개발용: 컬러 적용) -->
-    <!-- %clr(...){color}: 색상 적용, %X{traceId}: MDC의 traceId 출력 -->
+    <!-- %clr(...){color}: 색상 적용, %X{requestId}: MDC의 requestId 출력 -->
     <property name="CONSOLE_LOG_PATTERN" 
-              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} : [%clr(%X{traceId}){yellow}] %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} : %clr([req=%X{requestId:-SYSTEM}, user=%X{userId:-ANON}]){yellow} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 
     <!-- 파일 출력 패턴 (운영용: 깔끔함 위주) -->
     <property name="FILE_LOG_PATTERN" 
-              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%t] %-40.40logger{39} : [%X{traceId}] %m%n%wEx"/>
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%t] %-40.40logger{39} : [req=%X{requestId:-SYSTEM}, user=%X{userId:-ANON}] %m%n%wEx"/>
 
     <!-- 1. 콘솔 앱펜더 -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
@@ -65,8 +65,8 @@
 
     <!-- 상세 로거 설정 (application.properties보다 우선순위 높음) -->
     <!-- SQL 로그: 개발 중에만 DEBUG, 운영에선 INFO 이상 권장 -->
-    <logger name="org.hibernate.SQL" level="DEBUG"/>
-    <logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
+    <logger name="org.hibernate.SQL" level="OFF"/>
+    <logger name="org.hibernate.orm.jdbc.bind" level="OFF"/>
 
     <!-- 잡다한 로그 줄이기 -->
     <logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
