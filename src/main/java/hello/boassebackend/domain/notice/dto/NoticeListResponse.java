@@ -22,6 +22,5 @@ public class NoticeListResponse {
     @AllArgsConstructor
     public static class Data {
         private List<NoticeItem> notices;
-        private Pagination pagination;
     }
 }

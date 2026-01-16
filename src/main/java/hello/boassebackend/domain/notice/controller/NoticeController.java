@@ -25,21 +25,14 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    // 관리자 비밀번호 (실제 운영 시에는 DB나 환경변수 관리 권장)
-    private static final String ADMIN_PASSWORD = "admin1234";
-
     /**
      * 공지사항 목록 조회
      */
     @GetMapping
     public ResponseEntity<NoticeListResponse> getNotices(
-            @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int limit,
             jakarta.servlet.http.HttpServletRequest request) {
         
-        request.setAttribute("logData", "page=" + page + ", limit=" + limit);
-        
-        NoticeListResponse response = noticeService.getNotices(page, limit);
+        NoticeListResponse response = noticeService.getNotices();
         return ResponseEntity.ok(response);
     }
 
@@ -67,9 +60,11 @@ public class NoticeController {
         }
 
         NoticeDetailResponse responseDto;
+        String clientIp = request.getRemoteAddr();
+        
         if (!isVisited) {
-            // 처음 방문: 조회수 증가
-            responseDto = noticeService.getNoticeDetailWithViewCount(id);
+            // 처음 방문: 조회수 증가 (동시 요청 방어 로직 포함)
+            responseDto = noticeService.getNoticeDetailWithViewCount(id, clientIp);
 
             // 쿠키 생성 (오늘 자정까지 유지)
             jakarta.servlet.http.Cookie cookie = new jakarta.servlet.http.Cookie(cookieName, "true");
@@ -88,7 +83,7 @@ public class NoticeController {
             responseDto = noticeService.getNoticeDetail(id);
         }
 
-        request.setAttribute("logData", "noticeId=" + id + ", visited=" + isVisited);
+        request.setAttribute("logData", "noticeId=" + id + ", visited=" + isVisited + ", ip=" + clientIp);
         return ResponseEntity.ok(responseDto);
     }
 
@@ -100,8 +95,6 @@ public class NoticeController {
             @ModelAttribute NoticeCreateRequest requestDto,
             jakarta.servlet.http.HttpServletRequest request) throws IOException {
         
-        checkPassword(requestDto.getPassword());
-
         Long noticeId = noticeService.createNotice(requestDto, "Admin");
         
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
@@ -120,8 +113,6 @@ public class NoticeController {
             @ModelAttribute NoticeUpdateRequest requestDto,
             jakarta.servlet.http.HttpServletRequest request) throws IOException {
         
-        checkPassword(requestDto.getPassword());
-
         Long noticeId = noticeService.updateNotice(id, requestDto);
         NoticeDetailResponse response = noticeService.getNoticeDetail(noticeId);
 
@@ -135,10 +126,7 @@ public class NoticeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> deleteNotice(
             @PathVariable Long id,
-            @RequestParam String password,
             jakarta.servlet.http.HttpServletRequest request) { 
-        
-        checkPassword(password);
 
         noticeService.deleteNotice(id);
 
@@ -156,15 +144,6 @@ public class NoticeController {
     }
 
     /**
-     * 비밀번호 검증 메서드
+     * 비밀번호 검증 메서드 (삭제됨)
      */
-    private void checkPassword(String password) {
-        // 디버깅을 위해 로그 출력 (운영 환경에서는 비밀번호 로깅 주의 - 마스킹 필요하나 여기선 생략)
-        // log.debug("Received password check"); 
-        
-        if (password == null || !ADMIN_PASSWORD.equals(password.trim())) {
-            log.warn("권한 없는 접근 시도 (비밀번호 불일치)");
-            throw new ForbiddenException("관리자 비밀번호가 일치하지 않습니다.");
-        }
-    }
 }

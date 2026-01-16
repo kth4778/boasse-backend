@@ -35,38 +35,45 @@ public class NoticeService {
     /**
      * 공지사항 목록 조회
      */
-    public NoticeListResponse getNotices(int page, int limit) {
-        // page는 0부터 시작하므로 1을 빼줍니다.
-        Pageable pageable = PageRequest.of(page - 1, limit, Sort.by(Sort.Direction.DESC, "createdAt"));
-        Page<Notice> noticePage = noticeRepository.findAll(pageable);
+    public NoticeListResponse getNotices() {
+        List<Notice> notices = noticeRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
 
-        List<NoticeItem> noticeItems = noticePage.getContent().stream()
+        List<NoticeItem> noticeItems = notices.stream()
                 .map(NoticeItem::from)
                 .collect(Collectors.toList());
-
-        Pagination pagination = Pagination.builder()
-                .currentPage(page)
-                .totalPages(noticePage.getTotalPages())
-                .totalCount(noticePage.getTotalElements())
-                .limit(limit)
-                .hasNext(noticePage.hasNext())
-                .hasPrev(noticePage.hasPrevious())
-                .build();
 
         return NoticeListResponse.builder()
                 .success(true)
                 .data(NoticeListResponse.Data.builder()
                         .notices(noticeItems)
-                        .pagination(pagination)
                         .build())
                 .build();
     }
 
+    private final java.util.Map<String, Long> lastViewTimeMap = new java.util.concurrent.ConcurrentHashMap<>();
+
     /**
      * 공지사항 상세 조회 (조회수 증가 O)
+     * 동시 요청(Race Condition) 방지를 위해 서버 메모리 쿨타임 체크 적용
      */
     @Transactional
-    public NoticeDetailResponse getNoticeDetailWithViewCount(Long id) {
+    public NoticeDetailResponse getNoticeDetailWithViewCount(Long id, String clientIdentifier) {
+        // 1. 동시 요청 방지 (3초 쿨타임)
+        String key = clientIdentifier + "_" + id;
+        Long lastTime = lastViewTimeMap.get(key);
+        long currentTime = System.currentTimeMillis();
+
+        if (lastTime != null && (currentTime - lastTime) < 3000) {
+            log.debug("동시 요청 감지(조회수 증가 Skip): key={}, diff={}ms", key, currentTime - lastTime);
+            return getNoticeDetail(id);
+        }
+
+        // 2. 기록 및 메모리 관리
+        lastViewTimeMap.put(key, currentTime);
+        if (lastViewTimeMap.size() > 1000) {
+            lastViewTimeMap.clear(); // 메모리 누수 방지용 단순 초기화
+        }
+
         Notice notice = findNoticeByIdOrThrow(id);
 
         int oldViewCount = notice.getViewCount();

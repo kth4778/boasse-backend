@@ -9,7 +9,6 @@ import java.util.List;
 public class NoticeUpdateRequest {
     private String title;
     private String content;
-    private String password; // 관리자 비밀번호
     private List<MultipartFile> files;
     
     // 삭제할 파일 ID 리스트 (쉼표로 구분된 문자열로 들어오는 경우 처리)

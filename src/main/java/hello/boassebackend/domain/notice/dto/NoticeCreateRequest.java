@@ -12,6 +12,5 @@ public class NoticeCreateRequest {
     
     private String title;
     private String content;
-    private String password; // 관리자 비밀번호
     private List<MultipartFile> files;
 }

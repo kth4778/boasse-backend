@@ -1,0 +1,218 @@
+2026-01-15 16:16:51.895  INFO 36508 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Starting BoasseBackendApplication using Java 17.0.15 with PID 36508 (C:\BoasseProject\boasse-backend\build\classes\java\main started by cnblu in C:\BoasseProject\boasse-backend)
+2026-01-15 16:16:51.909  INFO 36508 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] No active profile set, falling back to 1 default profile: "default"
+2026-01-15 16:16:53.451  INFO 36508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-15 16:16:53.610  INFO 36508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Finished Spring Data repository scanning in 141 ms. Found 2 JPA repository interfaces.
+2026-01-15 16:16:54.911  INFO 36508 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat initialized with port 8080 (http)
+2026-01-15 16:16:54.936  INFO 36508 --- [main] o.apache.catalina.core.StandardService   : [req=SYSTEM, user=ANON] Starting service [Tomcat]
+2026-01-15 16:16:54.937  INFO 36508 --- [main] o.apache.catalina.core.StandardEngine    : [req=SYSTEM, user=ANON] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-15 16:16:55.074  INFO 36508 --- [main] b.w.c.s.WebApplicationContextInitializer : [req=SYSTEM, user=ANON] Root WebApplicationContext: initialization completed in 3058 ms
+2026-01-15 16:16:55.392  INFO 36508 --- [main] org.hibernate.orm.jpa                    : [req=SYSTEM, user=ANON] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-15 16:16:55.551  INFO 36508 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-15 16:16:56.587  INFO 36508 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : [req=SYSTEM, user=ANON] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-15 16:16:56.661  INFO 36508 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Starting...
+2026-01-15 16:16:57.295  INFO 36508 --- [main] com.zaxxer.hikari.pool.HikariPool        : [req=SYSTEM, user=ANON] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a4cb483
+2026-01-15 16:16:57.299  INFO 36508 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Start completed.
+2026-01-15 16:16:57.478  INFO 36508 --- [main] org.hibernate.orm.connections.pooling    : [req=SYSTEM, user=ANON] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/boas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.3
+	Default catalog/schema: boas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-15 16:16:59.125  INFO 36508 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-15 16:16:59.281  INFO 36508 --- [main] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-15 16:16:59.418  INFO 36508 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : [req=SYSTEM, user=ANON] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-15 16:16:59.794  WARN 36508 --- [main] JpaBaseConfiguration$JpaWebConfiguration : [req=SYSTEM, user=ANON] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-15 16:17:00.304  INFO 36508 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat started on port 8080 (http) with context path '/'
+2026-01-15 16:17:00.310  INFO 36508 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Started BoasseBackendApplication in 9.554 seconds (process running for 11.244)
+2026-01-15 16:17:13.833  INFO 36508 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : [req=SYSTEM, user=ANON] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-15 16:17:13.834  INFO 36508 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Initializing Servlet 'dispatcherServlet'
+2026-01-15 16:17:13.837  INFO 36508 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Completed initialization in 3 ms
+2026-01-15 16:17:14.782  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=82396876, user=Anonymous] GET /api/v1/notices - 200 OK (890ms) | page=1, limit=10
+2026-01-15 16:17:14.842  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=6428f6ef, user=Anonymous] GET /api/v1/notices - 200 OK (45ms) | page=1, limit=10
+2026-01-15 16:17:18.538  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=6b41faab, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=3
+2026-01-15 16:17:18.569  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=98e8ae80, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=3
+2026-01-15 16:17:34.321  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=c2c99426, user=Anonymous] GET /api/v1/notices/18 - 200 OK (159ms) | noticeId=18, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 16:17:34.341  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=22d9193c, user=Anonymous] GET /api/v1/notices/18 - 200 OK (11ms) | noticeId=18, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 16:18:47.883  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=0a5699dc, user=Anonymous] GET /api/v1/notices - 200 OK (35ms) | page=1, limit=10
+2026-01-15 16:18:47.925  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=826e9628, user=Anonymous] GET /api/v1/notices - 200 OK (32ms) | page=1, limit=10
+2026-01-15 16:18:53.706  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=60fc1b8f, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=3
+2026-01-15 16:18:53.768  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=7b54a417, user=Anonymous] GET /api/v1/notices - 200 OK (40ms) | page=1, limit=3
+2026-01-15 16:21:33.162  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=e99177bc, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=3
+2026-01-15 16:21:33.189  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=f369722f, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=3
+2026-01-15 16:24:10.317  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=592cee45, user=Anonymous] GET /api/v1/notices - 200 OK (32ms) | page=1, limit=3
+2026-01-15 16:24:10.371  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=68861d84, user=Anonymous] GET /api/v1/notices - 200 OK (31ms) | page=1, limit=3
+2026-01-15 16:32:36.210  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=856a4e4b, user=Anonymous] GET /api/v1/notices - 200 OK (27ms) | page=1, limit=3
+2026-01-15 16:32:36.249  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=32fbd6c0, user=Anonymous] GET /api/v1/notices - 200 OK (29ms) | page=1, limit=3
+2026-01-15 16:33:47.494  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=5c1e8683, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=3
+2026-01-15 16:33:47.533  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=0d153197, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=3
+2026-01-15 16:35:58.950  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=20132663, user=Anonymous] GET /api/v1/notices - 200 OK (30ms) | page=1, limit=3
+2026-01-15 16:35:58.999  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=f4a8772e, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=3
+2026-01-15 16:37:17.899  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=aabf38f2, user=Anonymous] GET /api/v1/notices - 200 OK (25ms) | page=1, limit=3
+2026-01-15 16:37:17.937  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=231bf968, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=3
+2026-01-15 16:40:34.928  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=b6bb6131, user=Anonymous] GET /api/v1/notices - 200 OK (32ms) | page=1, limit=3
+2026-01-15 16:40:34.961  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=1f4677b6, user=Anonymous] GET /api/v1/notices - 200 OK (24ms) | page=1, limit=3
+2026-01-15 16:41:37.680  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=20db8498, user=Anonymous] GET /api/v1/notices - 200 OK (32ms) | page=1, limit=10
+2026-01-15 16:41:37.714  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=b19d2af3, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 16:41:50.811  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=452f7bc9, user=Anonymous] GET /api/v1/notices - 200 OK (30ms) | page=1, limit=10
+2026-01-15 16:41:50.857  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=67858168, user=Anonymous] GET /api/v1/notices - 200 OK (39ms) | page=1, limit=10
+2026-01-15 16:43:16.713  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=e8a5ae8b, user=Anonymous] GET /api/v1/notices - 200 OK (18ms) | page=1, limit=3
+2026-01-15 16:43:16.738  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=9babef2f, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=3
+2026-01-15 16:44:28.417  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=44e18420, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=3
+2026-01-15 16:44:28.446  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=46ad4a10, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=3
+2026-01-15 16:44:31.666  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=9963bbfd, user=Anonymous] GET /api/v1/notices - 200 OK (27ms) | page=1, limit=10
+2026-01-15 16:44:31.704  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=d6f92310, user=Anonymous] GET /api/v1/notices - 200 OK (28ms) | page=1, limit=10
+2026-01-15 16:44:49.783  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=1a105538, user=Anonymous] GET /api/v1/notices - 200 OK (29ms) | page=1, limit=10
+2026-01-15 16:44:49.823  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=0c51f51d, user=Anonymous] GET /api/v1/notices - 200 OK (32ms) | page=1, limit=10
+2026-01-15 17:00:50.112  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=dd06644d, user=Anonymous] GET /api/v1/notices - 200 OK (95ms) | page=1, limit=3
+2026-01-15 17:00:50.141  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=5c9c9d13, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=3
+2026-01-15 17:01:10.125  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=2f86edfd, user=Anonymous] GET /api/v1/notices - 200 OK (28ms) | page=1, limit=10
+2026-01-15 17:01:10.159  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=8c7510d6, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 17:01:19.132  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=6ca568f8, user=Anonymous] GET /api/v1/notices - 200 OK (25ms) | page=1, limit=10
+2026-01-15 17:01:19.166  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=15ce76bc, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 17:01:23.002  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=25c7c434, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=3
+2026-01-15 17:01:23.025  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=227855cb, user=Anonymous] GET /api/v1/notices - 200 OK (15ms) | page=1, limit=3
+2026-01-15 17:02:12.196  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=53a317b9, user=Anonymous] GET /api/v1/notices - 200 OK (33ms) | page=1, limit=10
+2026-01-15 17:02:12.235  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=7b379dae, user=Anonymous] GET /api/v1/notices - 200 OK (29ms) | page=1, limit=10
+2026-01-15 17:02:16.528  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=434a8138, user=Anonymous] GET /api/v1/notices/16 - 200 OK (61ms) | noticeId=16, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:16.545  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=7e603d1e, user=Anonymous] GET /api/v1/notices/16 - 200 OK (9ms) | noticeId=16, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:18.926  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=d75092fd, user=Anonymous] GET /api/v1/notices - 200 OK (33ms) | page=1, limit=10
+2026-01-15 17:02:18.957  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=b4c6960d, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:02:21.123  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=1a8f4f67, user=Anonymous] GET /api/v1/notices/16 - 200 OK (19ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:21.142  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=b997f5a9, user=Anonymous] GET /api/v1/notices/16 - 200 OK (10ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:23.524  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=a47641ac, user=Anonymous] GET /api/v1/notices/16 - 200 OK (10ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:23.549  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=30f42293, user=Anonymous] GET /api/v1/notices/16 - 200 OK (16ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:44.405  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=664b056a, user=Anonymous] GET /api/v1/notices/16 - 200 OK (11ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:44.423  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=0269ef0d, user=Anonymous] GET /api/v1/notices/16 - 200 OK (9ms) | noticeId=16, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:02:46.737  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=83f974a4, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=10
+2026-01-15 17:02:46.764  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=ae938892, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=10
+2026-01-15 17:02:54.116  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=de97f193, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:02:54.147  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=660ef9a4, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:04:42.689  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=d24cbc2e, user=Anonymous] GET /api/v1/notices - 200 OK (35ms) | page=1, limit=10
+2026-01-15 17:04:42.719  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=fea5be29, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:04:45.084  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=17f4473e, user=Anonymous] GET /api/v1/notices - 200 OK (41ms) | page=2, limit=10
+2026-01-15 17:04:46.074  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=b1b5d2c5, user=Anonymous] GET /api/v1/notices/8 - 200 OK (66ms) | noticeId=8, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:46.089  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=0a56725a, user=Anonymous] GET /api/v1/notices/8 - 200 OK (7ms) | noticeId=8, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:49.149  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=e9b32b60, user=Anonymous] GET /api/v1/notices/8 - 200 OK (8ms) | noticeId=8, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:49.164  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=2b0389b0, user=Anonymous] GET /api/v1/notices/8 - 200 OK (7ms) | noticeId=8, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:50.899  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=f2bc8789, user=Anonymous] GET /api/v1/notices/8 - 200 OK (8ms) | noticeId=8, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:50.919  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=2b93a5c0, user=Anonymous] GET /api/v1/notices/8 - 200 OK (11ms) | noticeId=8, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:04:53.567  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=87576cb5, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:04:53.597  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=ab442e4e, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:09:52.086  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=db1a554c, user=Anonymous] GET /api/v1/notices - 200 OK (95ms) | page=1, limit=3
+2026-01-15 17:09:52.114  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=45dda701, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=3
+2026-01-15 17:10:19.135  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=83d1016b, user=Anonymous] GET /api/v1/notices - 200 OK (29ms) | page=1, limit=10
+2026-01-15 17:10:19.163  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=28b16dfc, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=10
+2026-01-15 17:10:46.477  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=32caac40, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:10:46.512  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=b0864279, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 17:11:06.329  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=380ddae6, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:11:06.361  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=93f5d5ac, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:12:38.232  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=d9c4842c, user=Anonymous] GET /api/v1/notices/19 - 200 OK (23ms) | noticeId=19, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:12:38.248  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=6d1ff023, user=Anonymous] GET /api/v1/notices/19 - 200 OK (7ms) | noticeId=19, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:14:30.356  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=49d08252, user=Anonymous] GET /api/v1/notices - 200 OK (13ms) | page=1, limit=3
+2026-01-15 17:14:30.382  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=80424130, user=Anonymous] GET /api/v1/notices - 200 OK (14ms) | page=1, limit=3
+2026-01-15 17:14:54.820  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=e7d711e1, user=Anonymous] GET /api/v1/notices - 200 OK (16ms) | page=1, limit=3
+2026-01-15 17:14:54.851  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=23636dc4, user=Anonymous] GET /api/v1/notices - 200 OK (15ms) | page=1, limit=3
+2026-01-15 17:15:01.394  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=0a30d667, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:15:01.423  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=95a4dacb, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=10
+2026-01-15 17:15:03.768  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=cad3944d, user=Anonymous] GET /api/v1/notices/19 - 200 OK (6ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:15:03.784  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=ed37c63a, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:16:30.926  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=e4a4ef37, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:16:30.943  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=5ca0672b, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:36.714  INFO 36508 --- [http-nio-8080-exec-2] h.b.domain.notice.service.NoticeService  : [req=9a0b5c62, user=Anonymous] 게시물 수정 완료: noticeId=19
+2026-01-15 17:17:36.736  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=9a0b5c62, user=Anonymous] PUT /api/v1/notices/19 - 200 OK (92ms) | noticeId=19
+2026-01-15 17:17:37.901  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=2ca3f3ec, user=Anonymous] GET /api/v1/notices/19 - 200 OK (11ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:37.918  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=f104cc13, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:41.776  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=ae340124, user=Anonymous] GET /api/v1/notices/19 - 200 OK (10ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:41.791  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=e7ac0d5e, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:45.983  INFO 36508 --- [http-nio-8080-exec-9] h.b.domain.notice.service.NoticeService  : [req=d63a60f7, user=Anonymous] 게시물 수정 완료: noticeId=19
+2026-01-15 17:17:45.989  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=d63a60f7, user=Anonymous] PUT /api/v1/notices/19 - 200 OK (9ms) | noticeId=19
+2026-01-15 17:17:47.910  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=9d9acbf5, user=Anonymous] GET /api/v1/notices/19 - 200 OK (7ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:17:47.925  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=40efd8f3, user=Anonymous] GET /api/v1/notices/19 - 200 OK (6ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:18:05.516  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=614c5cf1, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:18:05.531  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=9d43511d, user=Anonymous] GET /api/v1/notices/19 - 200 OK (7ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:18:11.990  INFO 36508 --- [http-nio-8080-exec-2] h.b.domain.notice.service.NoticeService  : [req=27bdde7c, user=Anonymous] 게시물 수정 완료: noticeId=19
+2026-01-15 17:18:11.996  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=27bdde7c, user=Anonymous] PUT /api/v1/notices/19 - 200 OK (10ms) | noticeId=19
+2026-01-15 17:18:13.289  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=5e35130a, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:18:13.304  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=faf00b49, user=Anonymous] GET /api/v1/notices/19 - 200 OK (7ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:23.147  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=d1ee0003, user=Anonymous] GET /api/v1/notices/19 - 200 OK (11ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:23.168  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=bf466b9f, user=Anonymous] GET /api/v1/notices/19 - 200 OK (10ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:26.340  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=d4af7d67, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 17:27:26.368  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=4984d590, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:27:28.099  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=68921f1b, user=Anonymous] GET /api/v1/notices/19 - 200 OK (10ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:28.116  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=f1ffd03c, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:31.642  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=e0d558a9, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:27:31.671  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=26afc53b, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:27:33.432  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=e04011c5, user=Anonymous] GET /api/v1/notices/13 - 200 OK (15ms) | noticeId=13, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:33.448  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=28f87bf5, user=Anonymous] GET /api/v1/notices/13 - 200 OK (8ms) | noticeId=13, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:34.776  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=e03d659e, user=Anonymous] GET /api/v1/notices/13 - 200 OK (6ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:34.791  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=99f2eaef, user=Anonymous] GET /api/v1/notices/13 - 200 OK (7ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:40.298  INFO 36508 --- [http-nio-8080-exec-9] h.b.domain.notice.service.NoticeService  : [req=0bc44b6f, user=Anonymous] 게시물 수정 완료: noticeId=13
+2026-01-15 17:27:40.312  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=0bc44b6f, user=Anonymous] PUT /api/v1/notices/13 - 200 OK (18ms) | noticeId=13
+2026-01-15 17:27:41.610  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=d9093507, user=Anonymous] GET /api/v1/notices/13 - 200 OK (10ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:41.625  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=756f00d2, user=Anonymous] GET /api/v1/notices/13 - 200 OK (7ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:43.495  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=ff710b4b, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:27:43.527  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=f7e9929b, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:27:47.928  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=6a5b59c4, user=Anonymous] GET /api/v1/notices/14 - 200 OK (15ms) | noticeId=14, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:47.943  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=1247a135, user=Anonymous] GET /api/v1/notices/14 - 200 OK (7ms) | noticeId=14, visited=false, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:48.713  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=fdcca2f0, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:27:48.746  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=9b7ca24f, user=Anonymous] GET /api/v1/notices - 200 OK (25ms) | page=1, limit=10
+2026-01-15 17:27:49.836  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=9021936d, user=Anonymous] GET /api/v1/notices/13 - 200 OK (8ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:49.852  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=5ed28e93, user=Anonymous] GET /api/v1/notices/13 - 200 OK (8ms) | noticeId=13, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:27:50.896  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=178b10c1, user=Anonymous] GET /api/v1/notices - 200 OK (26ms) | page=1, limit=10
+2026-01-15 17:27:50.927  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=c39d00d9, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:27:59.937  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=587ab22a, user=Anonymous] GET /api/v1/notices - 200 OK (24ms) | page=1, limit=10
+2026-01-15 17:27:59.971  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=82e7239d, user=Anonymous] GET /api/v1/notices - 200 OK (24ms) | page=1, limit=10
+2026-01-15 17:28:03.149  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=23423b50, user=Anonymous] GET /api/v1/notices - 200 OK (16ms) | page=1, limit=3
+2026-01-15 17:28:03.177  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=ada14e52, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=3
+2026-01-15 17:29:46.753  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=5a7f0dc7, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=3
+2026-01-15 17:29:46.788  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=2fc8534a, user=Anonymous] GET /api/v1/notices - 200 OK (18ms) | page=1, limit=3
+2026-01-15 17:30:07.897  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=af8ed949, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:30:07.925  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=ff085757, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=10
+2026-01-15 17:30:09.291  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=5a2e16f1, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:09.309  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=174a4fd7, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:14.436  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=6df5b472, user=Anonymous] GET /api/v1/notices/19 - 200 OK (7ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:14.452  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=543a8211, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:24.694  INFO 36508 --- [http-nio-8080-exec-2] h.b.domain.notice.service.NoticeService  : [req=ab3d53d4, user=Anonymous] 게시물 수정 완료: noticeId=19
+2026-01-15 17:30:24.825  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=ab3d53d4, user=Anonymous] PUT /api/v1/notices/19 - 200 OK (167ms) | noticeId=19
+2026-01-15 17:30:25.945  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=76c93167, user=Anonymous] GET /api/v1/notices/19 - 200 OK (10ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:25.962  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=b5c2180b, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:50.266  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=9f0fb4c0, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:30:50.282  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=5d0c1691, user=Anonymous] GET /api/v1/notices/19 - 200 OK (8ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-15 17:31:08.863  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=81aca1c6, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=3
+2026-01-15 17:31:08.895  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=0d635e1a, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=3
+2026-01-15 17:32:02.059  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=f9413b71, user=Anonymous] GET /api/v1/notices - 200 OK (30ms) | page=1, limit=10
+2026-01-15 17:32:02.094  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=a2b32ff9, user=Anonymous] GET /api/v1/notices - 200 OK (25ms) | page=1, limit=10
+2026-01-15 17:38:02.905  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=d0089898, user=Anonymous] GET /api/v1/notices - 200 OK (11ms) | page=2, limit=10
+2026-01-15 17:38:06.697  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=a2e7ff7d, user=Anonymous] GET /api/v1/notices - 200 OK (16ms) | page=1, limit=10
+2026-01-15 17:39:43.693  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=d8df4370, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:40:05.692  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=9d89e5b2, user=Anonymous] GET /api/v1/notices - 200 OK (10ms) | page=2, limit=10
+2026-01-15 17:40:07.317  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=bf707cf1, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=10
+2026-01-15 17:40:10.125  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=3b327871, user=Anonymous] GET /api/v1/notices - 200 OK (14ms) | page=2, limit=10
+2026-01-15 17:40:11.571  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=4beeda7f, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:41:47.249  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=42856dc6, user=Anonymous] GET /api/v1/notices - 200 OK (23ms) | page=1, limit=10
+2026-01-15 17:41:47.280  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=7d40ab15, user=Anonymous] GET /api/v1/notices - 200 OK (22ms) | page=1, limit=10
+2026-01-15 17:42:08.206  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=8f654f6f, user=Anonymous] GET /api/v1/notices - 200 OK (14ms) | page=1, limit=3
+2026-01-15 17:42:08.226  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=286925f5, user=Anonymous] GET /api/v1/notices - 200 OK (12ms) | page=1, limit=3
+2026-01-15 17:42:53.302  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=d1f74733, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:42:53.329  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=50201cc1, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=10
+2026-01-15 17:47:11.908  INFO 36508 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=38205884, user=Anonymous] GET /api/v1/notices - 200 OK (20ms) | page=1, limit=10
+2026-01-15 17:47:11.935  INFO 36508 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=3679c85b, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=10
+2026-01-15 17:47:14.214  INFO 36508 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=0017b6c7, user=Anonymous] GET /api/v1/notices - 200 OK (24ms) | page=1, limit=10
+2026-01-15 17:47:14.243  INFO 36508 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=26a239ac, user=Anonymous] GET /api/v1/notices - 200 OK (21ms) | page=1, limit=10
+2026-01-15 17:47:23.368  INFO 36508 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=c3110233, user=Anonymous] GET /api/v1/notices - 200 OK (18ms) | page=1, limit=3
+2026-01-15 17:47:23.400  INFO 36508 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=9be5268b, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=3
+2026-01-15 17:48:48.010  INFO 36508 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=d8c1cdf3, user=Anonymous] GET /api/v1/notices - 200 OK (16ms) | page=1, limit=3
+2026-01-15 17:48:48.037  INFO 36508 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=fcf9f24e, user=Anonymous] GET /api/v1/notices - 200 OK (17ms) | page=1, limit=3
+2026-01-15 17:51:06.999  INFO 36508 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=980e7fea, user=Anonymous] GET /api/v1/notices - 200 OK (18ms) | page=1, limit=10
+2026-01-15 17:51:07.025  INFO 36508 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=92e3ab13, user=Anonymous] GET /api/v1/notices - 200 OK (19ms) | page=1, limit=10
+2026-01-15 17:51:30.811  INFO 36508 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-15 17:51:31.429  INFO 36508 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Graceful shutdown complete
+2026-01-15 17:51:31.453  INFO 36508 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-15 17:51:31.478  INFO 36508 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown initiated...
+2026-01-15 17:51:31.494  INFO 36508 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown completed.
