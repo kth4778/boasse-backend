@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: BOAS 서비스 통합 API
   description: BOAS 공지사항, 채용 및 제품 관리 시스템을 위한 API 명세서입니다.
-  version: 1.4.0
+  version: 1.4.1
 
 servers:
   - url: /api/v1
@@ -21,8 +21,71 @@ tags:
     description: 제품 관련 사용자 API
   - name: Product Admin
     description: 제품 관리자용 CRUD API
+  - name: Inquiry
+    description: 1:1 문의 관련 사용자 API
+  - name: Inquiry Admin
+    description: 1:1 문의 관리자용 API
 
 paths:
+  # --- Inquiry API ---
+  /inquiries:
+    post:
+      summary: 1:1 문의 등록
+      tags: [Inquiry]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                email: { type: string }
+                message: { type: string }
+                isAgreed: { type: boolean, description: "개인정보 수집 동의 여부" }
+              required: [name, message, isAgreed]
+      responses:
+        '201':
+          description: 문의 등록 성공
+    get:
+      summary: 문의 목록 조회
+      tags: [Inquiry Admin]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 10 }
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/InquiryListResponse' }
+
+  /inquiries/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      summary: 문의 상세 조회
+      tags: [Inquiry Admin]
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/InquiryItem' }
+    delete:
+      summary: 문의 삭제
+      tags: [Inquiry Admin]
+      responses:
+        '200':
+          description: 삭제 성공
+
   # --- Notice API ---
   /notices:
     get:
@@ -55,7 +118,7 @@ paths:
   # --- Recruit API ---
   /recruits:
     get:
-      summary: 채용공고 목록 조회 (업무/요건 포함)
+      summary: 채용공고 목록 조회 (업무/요건/링크 포함)
       tags: [Recruit]
       responses:
         '200':
@@ -79,8 +142,8 @@ paths:
                 location: { type: string }
                 type: { type: string }
                 applyLink: { type: string, format: uri }
-                recruit_duties: { type: array, items: { type: string }, description: "주요 업무 리스트 (recruit_duties 테이블 저장)" }
-                recruit_requirements: { type: array, items: { type: string }, description: "자격 요건 리스트 (recruit_requirements 테이블 저장)" }
+                recruit_duties: { type: array, items: { type: string } }
+                recruit_requirements: { type: array, items: { type: string } }
               required: [title, applyLink]
       responses:
         '201':
@@ -160,7 +223,7 @@ paths:
 
 components:
   schemas:
-    # --- Recruit Schemas (연관 데이터 포함) ---
+    # --- Recruit Schemas (지원링크 포함 필수!) ---
     RecruitItem:
       type: object
       properties:
@@ -169,6 +232,7 @@ components:
         status: { type: string }
         location: { type: string }
         type: { type: string }
+        applyLink: { type: string, format: uri, description: "지원 페이지 외부 링크" }
         recruit_duties: { type: array, items: { type: string } }
         recruit_requirements: { type: array, items: { type: string } }
         createdAt: { type: string, format: date-time }
@@ -187,16 +251,34 @@ components:
         success: { type: boolean }
         data: { $ref: '#/components/schemas/RecruitItem' }
 
-    # --- 기타 공통 스키마 (기존 유지) ---
+    # --- 기타 공통 스키마 생략 ---
     NoticeListResponse: { type: object, properties: { success: { type: boolean }, data: { type: object } } }
     ProductListResponse: { type: object, properties: { success: { type: boolean }, data: { type: array } } }
     
-    ErrorResponse:
+    # --- Inquiry Schemas ---
+    InquiryItem:
       type: object
       properties:
-        success: { type: boolean, example: false }
-        error:
+        id: { type: integer }
+        name: { type: string }
+        email: { type: string }
+        message: { type: string }
+        isAgreed: { type: boolean }
+        createdAt: { type: string, format: date-time }
+        
+    InquiryListResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
           type: object
           properties:
-            code: { type: string }
-            message: { type: string }
+            inquiries:
+              type: array
+              items: { $ref: '#/components/schemas/InquiryItem' }
+            pagination:
+              type: object
+              properties:
+                totalCount: { type: integer }
+                totalPages: { type: integer }
+                currentPage: { type: integer }
