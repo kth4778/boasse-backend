@@ -1498,3 +1498,524 @@ Caused by: org.hibernate.PropertyValueException: not-null property references a 
 2026-01-16 10:59:06.642  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=cb1ad22f, user=Anonymous] GET /api/v1/notices - 200 OK (20ms)
 2026-01-16 11:01:14.751  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=0ce54800, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
 2026-01-16 11:01:14.773  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=8b26bf87, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:06:54.183  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=2d2522c8, user=Anonymous] GET /api/v1/notices - 200 OK (23ms)
+2026-01-16 11:06:54.213  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=dd8fe25e, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 11:07:12.342  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=4dbcf9e5, user=Anonymous] GET /api/v1/notices - 200 OK (22ms)
+2026-01-16 11:07:12.367  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=c85135fd, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 11:07:16.125  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=036d3b5b, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:07:16.144  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=9a6cce57, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:09:35.766  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=85e2ee36, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 11:09:35.783  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=ec54086e, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:09:59.757  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=2d17e0b6, user=Anonymous] GET /api/v1/notices - 200 OK (19ms)
+2026-01-16 11:09:59.783  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=cab2db6e, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 11:10:01.123  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=c5b5be3b, user=Anonymous] GET /api/v1/notices/19 - 200 OK (19ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 11:10:01.146  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=330dabbc, user=Anonymous] GET /api/v1/notices/19 - 200 OK (16ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 11:10:03.539  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=ce7351e8, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:10:03.556  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=25b80afa, user=Anonymous] GET /api/v1/recruits - 200 OK (9ms)
+2026-01-16 11:10:59.912  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=ba949e03, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 11:10:59.947  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=2dc7e773, user=Anonymous] GET /api/v1/notices - 200 OK (19ms)
+2026-01-16 11:11:32.539  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=fcc0785c, user=Anonymous] GET /api/v1/notices - 200 OK (13ms)
+2026-01-16 11:11:32.561  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=bda4d11a, user=Anonymous] GET /api/v1/notices - 200 OK (12ms)
+2026-01-16 11:11:41.294  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=30c6da31, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 11:11:41.316  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=69ad8849, user=Anonymous] GET /api/v1/notices - 200 OK (15ms)
+2026-01-16 11:11:42.027  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=9a187fa4, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:11:42.043  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=7f8f5a75, user=Anonymous] GET /api/v1/recruits - 200 OK (9ms)
+2026-01-16 11:11:47.940  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=87ae9e21, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:11:47.964  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=9a67f68f, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:12:36.676  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=03f9b9b6, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 11:12:36.699  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=dd30a434, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:12:37.583  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=2e1104aa, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:12:37.600  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=58c7a5c0, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:13:49.826  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=3ba9c1c4, user=Anonymous] GET /api/v1/recruits - 200 OK (20ms)
+2026-01-16 11:13:49.844  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=830da378, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:14:11.842  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=0e1917e6, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:14:11.860  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=f066e99c, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:14:16.763  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=03e63a0e, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 11:14:16.781  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=785e7fc1, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:14:22.509  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=60c2321a, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:14:22.526  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=f869e0ce, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:14:37.353  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=7fca3eea, user=Anonymous] GET /api/v1/recruits - 200 OK (9ms)
+2026-01-16 11:14:37.370  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=d200fe43, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:15:48.205  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=2e76056f, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:15:48.226  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=6b1181ec, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:18:45.824  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=0c5dea62, user=Anonymous] GET /api/v1/recruits - 200 OK (9ms)
+2026-01-16 11:18:45.839  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=7e57e2f9, user=Anonymous] GET /api/v1/recruits - 200 OK (8ms)
+2026-01-16 11:18:47.233  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=38db56ff, user=Anonymous] GET /api/v1/recruits/5 - 200 OK (7ms)
+2026-01-16 11:18:47.247  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=e65530fd, user=Anonymous] GET /api/v1/recruits/5 - 200 OK (7ms)
+2026-01-16 11:18:50.847  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=6d67b67e, user=Anonymous] GET /api/v1/notices - 200 OK (14ms)
+2026-01-16 11:18:50.870  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=8da90f2a, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:21:35.129  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=68f3d634, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:21:35.145  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=7643006f, user=Anonymous] GET /api/v1/recruits - 200 OK (9ms)
+2026-01-16 11:29:40.617  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=d3cbe436, user=Anonymous] GET /api/v1/notices - 200 OK (29ms)
+2026-01-16 11:29:40.636  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=baae3307, user=Anonymous] GET /api/v1/notices - 200 OK (12ms)
+2026-01-16 11:31:28.104  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=ff25659d, user=Anonymous] GET /api/v1/notices - 200 OK (15ms)
+2026-01-16 11:31:28.138  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=50ca0b5d, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:38:06.031  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=05591930, user=Anonymous] GET /api/v1/recruits - 200 OK (16ms)
+2026-01-16 11:38:06.046  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=74be16c8, user=Anonymous] GET /api/v1/recruits - 200 OK (8ms)
+2026-01-16 11:38:12.689  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=113c4267, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:38:12.706  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=fa7cd5c8, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:38:28.305  INFO 23188 --- [http-nio-8080-exec-10] h.b.d.recruit.service.RecruitService     : [req=9fa0f9a8, user=Anonymous] 채용공고 작성 성공: recruitId=6, title="¨ㅁㄴㅇㅁㄴㅇ"
+2026-01-16 11:38:28.329  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=9fa0f9a8, user=Anonymous] POST /api/v1/recruits - 201 OK (77ms) | recruitId=6, title=ㅁㄴㅇㅁㄴㅇ
+2026-01-16 11:38:29.443  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=48e6540e, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 11:38:29.461  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=e8465c24, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 11:38:32.412  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=35f290a3, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 11:38:32.432  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=61dfc918, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 11:44:11.978  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=f48cc2fe, user=Anonymous] GET /api/v1/notices - 200 OK (47ms)
+2026-01-16 11:44:12.007  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=7db83e20, user=Anonymous] GET /api/v1/notices - 200 OK (19ms)
+2026-01-16 11:47:14.852  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=f5500fba, user=Anonymous] GET /api/v1/recruits - 200 OK (29ms)
+2026-01-16 11:47:15.069  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=592f15f0, user=Anonymous] GET /api/v1/recruits - 200 OK (200ms)
+2026-01-16 11:47:41.383  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=e94d8fc3, user=Anonymous] GET /api/v1/recruits - 200 OK (33ms)
+2026-01-16 11:47:41.536  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=ab28d388, user=Anonymous] GET /api/v1/recruits - 200 OK (20ms)
+2026-01-16 11:47:46.215  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=a82fb754, user=Anonymous] GET /api/v1/notices - 200 OK (654ms)
+2026-01-16 11:47:46.257  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=1862f78d, user=Anonymous] GET /api/v1/notices - 200 OK (33ms)
+2026-01-16 11:47:50.532  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=4c8eeb68, user=Anonymous] GET /api/v1/notices - 200 OK (29ms)
+2026-01-16 11:47:50.590  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=0dff559b, user=Anonymous] GET /api/v1/notices - 200 OK (40ms)
+2026-01-16 11:49:32.432  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=b257837e, user=Anonymous] GET /api/v1/notices - 200 OK (22ms)
+2026-01-16 11:49:32.483  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=7f26da0b, user=Anonymous] GET /api/v1/notices - 200 OK (39ms)
+2026-01-16 11:51:20.280  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=c930289f, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 11:51:20.303  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=689adf91, user=Anonymous] GET /api/v1/notices - 200 OK (28ms)
+2026-01-16 11:51:46.310  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=37a5a6b0, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 11:51:46.339  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=36e53c89, user=Anonymous] GET /api/v1/notices - 200 OK (21ms)
+2026-01-16 11:56:39.925  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=cf375b54, user=Anonymous] GET /api/v1/notices - 200 OK (19ms)
+2026-01-16 11:56:39.942  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=9da53bb6, user=Anonymous] GET /api/v1/notices - 200 OK (11ms)
+2026-01-16 11:57:08.491  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=b8487c81, user=Anonymous] GET /api/v1/notices - 200 OK (20ms)
+2026-01-16 11:57:08.514  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=047b5a3b, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 11:57:24.390  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=e00b162e, user=Anonymous] GET /api/v1/notices - 200 OK (23ms)
+2026-01-16 11:57:24.414  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=c70d6118, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 11:58:19.892  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=03cec6d9, user=Anonymous] GET /api/v1/recruits - 200 OK (17ms)
+2026-01-16 11:58:19.911  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=2ccd0da2, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:58:56.322  INFO 23188 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=ba763213, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 11:58:56.343  INFO 23188 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=9ee746b1, user=Anonymous] GET /api/v1/notices - 200 OK (14ms)
+2026-01-16 11:58:59.225  INFO 23188 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=37c3d3d6, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 11:58:59.242  INFO 23188 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=89abb85f, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 12:00:32.526  INFO 23188 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=bfe311d9, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 12:00:32.543  INFO 23188 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=0bb2e1c2, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 12:00:32.932  INFO 23188 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=5694d126, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 12:00:32.955  INFO 23188 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=65cb9445, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 12:01:37.218  INFO 23188 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=b14be731, user=Anonymous] GET /api/v1/notices - 200 OK (25ms)
+2026-01-16 12:01:37.260  INFO 23188 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=e7f1ea8a, user=Anonymous] GET /api/v1/notices - 200 OK (25ms)
+2026-01-16 12:36:41.741  WARN 23188 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : [req=SYSTEM, user=ANON] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@157207d0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-01-16 12:36:42.232  WARN 23188 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : [req=SYSTEM, user=ANON] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m42s658ms564µs200ns).
+2026-01-16 13:09:09.904  INFO 27404 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Starting BoasseBackendApplication using Java 17.0.15 with PID 27404 (C:\BoasseProject\boasse-backend\build\classes\java\main started by cnblu in C:\BoasseProject\boasse-backend)
+2026-01-16 13:09:09.908  INFO 27404 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] No active profile set, falling back to 1 default profile: "default"
+2026-01-16 13:09:10.955  INFO 27404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-16 13:09:11.091  INFO 27404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Finished Spring Data repository scanning in 122 ms. Found 4 JPA repository interfaces.
+2026-01-16 13:09:12.154  INFO 27404 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat initialized with port 8080 (http)
+2026-01-16 13:09:12.180  INFO 27404 --- [main] o.apache.catalina.core.StandardService   : [req=SYSTEM, user=ANON] Starting service [Tomcat]
+2026-01-16 13:09:12.180  INFO 27404 --- [main] o.apache.catalina.core.StandardEngine    : [req=SYSTEM, user=ANON] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-16 13:09:12.281  INFO 27404 --- [main] b.w.c.s.WebApplicationContextInitializer : [req=SYSTEM, user=ANON] Root WebApplicationContext: initialization completed in 2319 ms
+2026-01-16 13:09:12.616  INFO 27404 --- [main] org.hibernate.orm.jpa                    : [req=SYSTEM, user=ANON] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-16 13:09:12.883  INFO 27404 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-16 13:09:13.827  INFO 27404 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : [req=SYSTEM, user=ANON] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-16 13:09:13.885  INFO 27404 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Starting...
+2026-01-16 13:09:14.360  INFO 27404 --- [main] com.zaxxer.hikari.pool.HikariPool        : [req=SYSTEM, user=ANON] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f911d24
+2026-01-16 13:09:14.363  INFO 27404 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Start completed.
+2026-01-16 13:09:14.521  INFO 27404 --- [main] org.hibernate.orm.connections.pooling    : [req=SYSTEM, user=ANON] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/boas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.3
+	Default catalog/schema: boas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-16 13:09:16.199  INFO 27404 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-16 13:09:16.328  INFO 27404 --- [main] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-16 13:09:16.482  INFO 27404 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : [req=SYSTEM, user=ANON] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-16 13:09:17.730  WARN 27404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : [req=SYSTEM, user=ANON] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-16 13:09:18.308  INFO 27404 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat started on port 8080 (http) with context path '/'
+2026-01-16 13:09:18.315  INFO 27404 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Started BoasseBackendApplication in 9.178 seconds (process running for 10.714)
+2026-01-16 13:10:56.339  INFO 27404 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : [req=SYSTEM, user=ANON] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-16 13:10:56.340  INFO 27404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Initializing Servlet 'dispatcherServlet'
+2026-01-16 13:10:56.344  INFO 27404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Completed initialization in 3 ms
+2026-01-16 13:10:57.323  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=2ccb59b9, user=Anonymous] GET /api/v1/recruits - 200 OK (910ms)
+2026-01-16 13:10:57.361  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=7df5573a, user=Anonymous] GET /api/v1/recruits - 200 OK (25ms)
+2026-01-16 13:11:04.421  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=9fa8e624, user=Anonymous] GET /api/v1/notices - 200 OK (75ms)
+2026-01-16 13:11:04.460  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=3cbd1a24, user=Anonymous] GET /api/v1/notices - 200 OK (30ms)
+2026-01-16 13:11:08.428  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=48a9ca56, user=Anonymous] GET /api/v1/recruits - 200 OK (20ms)
+2026-01-16 13:11:08.458  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=4afb2d98, user=Anonymous] GET /api/v1/recruits - 200 OK (22ms)
+2026-01-16 13:11:09.834  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=9ebea05e, user=Anonymous] GET /api/v1/notices - 200 OK (32ms)
+2026-01-16 13:11:09.878  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=a3ae96d9, user=Anonymous] GET /api/v1/notices - 200 OK (35ms)
+2026-01-16 13:11:10.678  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=4c7531bd, user=Anonymous] GET /api/v1/recruits - 200 OK (18ms)
+2026-01-16 13:11:10.699  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=5e261431, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:11:12.158  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=b87ad45c, user=Anonymous] GET /api/v1/notices - 200 OK (28ms)
+2026-01-16 13:11:12.190  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=4094f70c, user=Anonymous] GET /api/v1/notices - 200 OK (25ms)
+2026-01-16 13:11:13.701  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=f0c7ecc0, user=Anonymous] GET /api/v1/recruits - 200 OK (18ms)
+2026-01-16 13:11:13.726  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=ccdfa8f7, user=Anonymous] GET /api/v1/recruits - 200 OK (17ms)
+2026-01-16 13:11:15.458  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=5f583664, user=Anonymous] GET /api/v1/notices - 200 OK (33ms)
+2026-01-16 13:11:15.493  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=b7805683, user=Anonymous] GET /api/v1/notices - 200 OK (28ms)
+2026-01-16 13:11:17.524  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=1fbf5301, user=Anonymous] GET /api/v1/recruits - 200 OK (17ms)
+2026-01-16 13:11:17.548  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=55b26f96, user=Anonymous] GET /api/v1/recruits - 200 OK (17ms)
+2026-01-16 13:13:16.955  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=85dc4ebb, user=Anonymous] GET /api/v1/notices - 200 OK (35ms)
+2026-01-16 13:13:17.001  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=4440bfd9, user=Anonymous] GET /api/v1/notices - 200 OK (36ms)
+2026-01-16 13:13:30.626  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=e944ef5e, user=Anonymous] GET /api/v1/notices/19 - 200 OK (53ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 13:13:30.642  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=cb3523ef, user=Anonymous] GET /api/v1/notices/19 - 200 OK (9ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 13:13:34.319  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=853ccd7c, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 13:13:34.341  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=fcaff8f5, user=Anonymous] GET /api/v1/recruits - 200 OK (16ms)
+2026-01-16 13:13:35.590  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=77b618e4, user=Anonymous] GET /api/v1/notices - 200 OK (27ms)
+2026-01-16 13:13:35.624  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=2b4c1608, user=Anonymous] GET /api/v1/notices - 200 OK (27ms)
+2026-01-16 13:13:36.989  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=40d79b82, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:13:37.010  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=1a5754f2, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 13:13:39.279  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=b11b3846, user=Anonymous] GET /api/v1/notices - 200 OK (23ms)
+2026-01-16 13:13:39.309  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=947a51a7, user=Anonymous] GET /api/v1/notices - 200 OK (24ms)
+2026-01-16 13:13:40.007  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=abe7858c, user=Anonymous] GET /api/v1/recruits - 200 OK (16ms)
+2026-01-16 13:13:40.028  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=50adec37, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 13:14:45.993  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=00c6466a, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 13:14:46.024  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=3126622e, user=Anonymous] GET /api/v1/notices - 200 OK (24ms)
+2026-01-16 13:14:46.704  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=b053ca1f, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:14:46.723  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=b701eba2, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:15:57.577  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=6790bdbb, user=Anonymous] GET /api/v1/notices - 200 OK (25ms)
+2026-01-16 13:15:57.607  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=614196f8, user=Anonymous] GET /api/v1/notices - 200 OK (23ms)
+2026-01-16 13:17:24.640  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=c592da96, user=Anonymous] GET /api/v1/recruits - 200 OK (18ms)
+2026-01-16 13:17:24.664  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=ba240e2d, user=Anonymous] GET /api/v1/recruits - 200 OK (17ms)
+2026-01-16 13:17:25.885  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=8148d54d, user=Anonymous] GET /api/v1/notices - 200 OK (21ms)
+2026-01-16 13:17:25.921  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=27426248, user=Anonymous] GET /api/v1/notices - 200 OK (28ms)
+2026-01-16 13:17:26.940  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=ca6e48fd, user=Anonymous] GET /api/v1/recruits - 200 OK (15ms)
+2026-01-16 13:17:26.966  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=bd22eae9, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:17:28.474  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=8dd2ebef, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 13:17:28.505  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=2c4d29d2, user=Anonymous] GET /api/v1/notices - 200 OK (23ms)
+2026-01-16 13:17:29.434  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=7da6c702, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:17:29.450  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=1c304c08, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 13:17:32.031  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=5fd49176, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 13:17:32.055  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=e0ea025d, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 13:17:34.129  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=fe1d50be, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:17:34.145  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=8046330b, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 13:17:48.341  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=1510b845, user=Anonymous] GET /api/v1/notices - 200 OK (22ms)
+2026-01-16 13:17:48.369  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=50286a1b, user=Anonymous] GET /api/v1/notices - 200 OK (20ms)
+2026-01-16 13:18:06.253  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=d2efcb59, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 13:18:06.272  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=8c6774a2, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:18:08.175  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=43163537, user=Anonymous] GET /api/v1/notices - 200 OK (13ms)
+2026-01-16 13:18:08.196  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=f4a4f4b0, user=Anonymous] GET /api/v1/notices - 200 OK (15ms)
+2026-01-16 13:18:09.512  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=7b6fc78f, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:18:09.532  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=3d48ca0b, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 13:18:20.358  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=6e8a578a, user=Anonymous] GET /api/v1/notices - 200 OK (14ms)
+2026-01-16 13:18:20.380  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=7ed63dfc, user=Anonymous] GET /api/v1/notices - 200 OK (16ms)
+2026-01-16 13:18:21.117  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=c0da2fbd, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 13:18:21.138  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=2801f35c, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:18:21.906  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=e1c754f6, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 13:18:21.927  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=32f5e64a, user=Anonymous] GET /api/v1/notices - 200 OK (14ms)
+2026-01-16 13:18:23.463  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=45878bc2, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:18:23.483  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=d4707733, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:23:57.542  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=570ea995, user=Anonymous] GET /api/v1/recruits - 200 OK (35ms)
+2026-01-16 13:23:57.562  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=3547b1cc, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 13:24:26.286  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=7796906b, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:24:26.303  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=875d3aa8, user=Anonymous] GET /api/v1/notices - 200 OK (29ms)
+2026-01-16 13:24:26.308  INFO 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=40b8e595, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:24:26.336  INFO 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=e7e40e48, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 13:24:29.455  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=e71d181f, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 13:24:29.474  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=ecd64919, user=Anonymous] GET /api/v1/recruits - 200 OK (12ms)
+2026-01-16 13:24:30.934  INFO 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=11ac55cb, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 13:24:30.956  INFO 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=9bb8f2c1, user=Anonymous] GET /api/v1/notices - 200 OK (13ms)
+2026-01-16 13:24:32.123  INFO 27404 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=83f2d987, user=Anonymous] GET /api/v1/recruits - 200 OK (15ms)
+2026-01-16 13:24:32.139  INFO 27404 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=02e507dc, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 13:24:42.468  INFO 27404 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=f208d387, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
+2026-01-16 13:24:42.497  INFO 27404 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=fb21f29d, user=Anonymous] GET /api/v1/notices - 200 OK (20ms)
+2026-01-16 13:37:13.318 ERROR 27404 --- [http-nio-8080-exec-3] h.b.g.exception.GlobalExceptionHandler   : [req=86680ce1, user=Anonymous] Exception: 
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/inquiries for request '/api/v1/inquiries'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at hello.boassebackend.global.common.MdcLoggingFilter.doFilter(MdcLoggingFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2026-01-16 13:37:13.377 ERROR 27404 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=86680ce1, user=Anonymous] GET /api/v1/inquiries - 500 (116ms)
+2026-01-16 13:37:13.394 ERROR 27404 --- [http-nio-8080-exec-4] h.b.g.exception.GlobalExceptionHandler   : [req=2db55828, user=Anonymous] Exception: 
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/inquiries for request '/api/v1/inquiries'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at hello.boassebackend.global.common.MdcLoggingFilter.doFilter(MdcLoggingFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2026-01-16 13:37:13.397 ERROR 27404 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=2db55828, user=Anonymous] GET /api/v1/inquiries - 500 (14ms)
+2026-01-16 13:37:16.583  INFO 27404 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=3db2199d, user=Anonymous] GET /api/v1/notices - 200 OK (24ms)
+2026-01-16 13:37:16.632  INFO 27404 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=6fcd4897, user=Anonymous] GET /api/v1/notices - 200 OK (21ms)
+2026-01-16 13:37:24.690 ERROR 27404 --- [http-nio-8080-exec-7] h.b.g.exception.GlobalExceptionHandler   : [req=3b4c6c1c, user=Anonymous] Exception: 
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/inquiries for request '/api/v1/inquiries'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at hello.boassebackend.global.common.MdcLoggingFilter.doFilter(MdcLoggingFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2026-01-16 13:37:24.693 ERROR 27404 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=3b4c6c1c, user=Anonymous] POST /api/v1/inquiries - 500 (26ms)
+2026-01-16 13:37:31.078 ERROR 27404 --- [http-nio-8080-exec-8] h.b.g.exception.GlobalExceptionHandler   : [req=f5212890, user=Anonymous] Exception: 
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/inquiries for request '/api/v1/inquiries'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at hello.boassebackend.global.common.MdcLoggingFilter.doFilter(MdcLoggingFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2026-01-16 13:37:31.082 ERROR 27404 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=f5212890, user=Anonymous] POST /api/v1/inquiries - 500 (8ms)
+2026-01-16 13:38:01.979  INFO 27404 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-16 13:38:02.653  INFO 27404 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Graceful shutdown complete
+2026-01-16 13:38:02.671  INFO 27404 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-16 13:38:02.688  INFO 27404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown initiated...
+2026-01-16 13:38:02.699  INFO 27404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown completed.
+2026-01-16 13:38:17.258  INFO 16264 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Starting BoasseBackendApplication using Java 17.0.15 with PID 16264 (C:\BoasseProject\boasse-backend\build\classes\java\main started by cnblu in C:\BoasseProject\boasse-backend)
+2026-01-16 13:38:17.264  INFO 16264 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] No active profile set, falling back to 1 default profile: "default"
+2026-01-16 13:38:18.510  INFO 16264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-16 13:38:18.660  INFO 16264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : [req=SYSTEM, user=ANON] Finished Spring Data repository scanning in 138 ms. Found 5 JPA repository interfaces.
+2026-01-16 13:38:19.727  INFO 16264 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat initialized with port 8080 (http)
+2026-01-16 13:38:19.751  INFO 16264 --- [main] o.apache.catalina.core.StandardService   : [req=SYSTEM, user=ANON] Starting service [Tomcat]
+2026-01-16 13:38:19.751  INFO 16264 --- [main] o.apache.catalina.core.StandardEngine    : [req=SYSTEM, user=ANON] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-16 13:38:19.862  INFO 16264 --- [main] b.w.c.s.WebApplicationContextInitializer : [req=SYSTEM, user=ANON] Root WebApplicationContext: initialization completed in 2516 ms
+2026-01-16 13:38:20.132  INFO 16264 --- [main] org.hibernate.orm.jpa                    : [req=SYSTEM, user=ANON] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-16 13:38:20.263  INFO 16264 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-16 13:38:21.177  INFO 16264 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : [req=SYSTEM, user=ANON] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-16 13:38:21.248  INFO 16264 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Starting...
+2026-01-16 13:38:21.749  INFO 16264 --- [main] com.zaxxer.hikari.pool.HikariPool        : [req=SYSTEM, user=ANON] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7736c41e
+2026-01-16 13:38:21.752  INFO 16264 --- [main] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Start completed.
+2026-01-16 13:38:21.909  INFO 16264 --- [main] org.hibernate.orm.connections.pooling    : [req=SYSTEM, user=ANON] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/boas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.3
+	Default catalog/schema: boas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-16 13:38:23.611  INFO 16264 --- [main] org.hibernate.orm.core                   : [req=SYSTEM, user=ANON] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-16 13:38:23.876  INFO 16264 --- [main] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-16 13:38:24.000  INFO 16264 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : [req=SYSTEM, user=ANON] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-16 13:38:25.003  WARN 16264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : [req=SYSTEM, user=ANON] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-16 13:38:25.582  INFO 16264 --- [main] o.s.boot.tomcat.TomcatWebServer          : [req=SYSTEM, user=ANON] Tomcat started on port 8080 (http) with context path '/'
+2026-01-16 13:38:25.592  INFO 16264 --- [main] h.b.BoasseBackendApplication             : [req=SYSTEM, user=ANON] Started BoasseBackendApplication in 9.414 seconds (process running for 10.93)
+2026-01-16 13:38:26.608  INFO 16264 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : [req=SYSTEM, user=ANON] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-16 13:38:26.609  INFO 16264 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Initializing Servlet 'dispatcherServlet'
+2026-01-16 13:38:26.613  INFO 16264 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : [req=SYSTEM, user=ANON] Completed initialization in 3 ms
+2026-01-16 13:38:27.285  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=107737aa, user=Anonymous] GET /api/v1/notices - 200 OK (621ms)
+2026-01-16 13:38:27.337  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=ca65d0a3, user=Anonymous] GET /api/v1/notices - 200 OK (44ms)
+2026-01-16 13:38:40.402  INFO 16264 --- [http-nio-8080-exec-3] h.b.d.inquiry.service.InquiryService     : [req=6cdf5033, user=Anonymous] 1:1 문의 등록 성공: inquiryId=1, name=김태현
+2026-01-16 13:38:40.419  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=6cdf5033, user=Anonymous] POST /api/v1/inquiries - 201 OK (205ms)
+2026-01-16 13:38:47.336  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=32c3be83, user=Anonymous] GET /api/v1/inquiries - 200 OK (42ms)
+2026-01-16 13:38:47.353  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=9a2e2ee9, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:38:53.164  INFO 16264 --- [http-nio-8080-exec-6] h.b.d.inquiry.service.InquiryService     : [req=c947a6a1, user=Anonymous] 1:1 문의 등록 성공: inquiryId=2, name=김태현
+2026-01-16 13:38:53.172  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=c947a6a1, user=Anonymous] POST /api/v1/inquiries - 201 OK (23ms)
+2026-01-16 13:38:55.581  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=e956a4e8, user=Anonymous] GET /api/v1/inquiries - 200 OK (12ms)
+2026-01-16 13:38:55.601  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=ba984f0b, user=Anonymous] GET /api/v1/inquiries - 200 OK (12ms)
+2026-01-16 13:38:57.131  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=7eaf91af, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:38:57.149  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=a9801a89, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:40:01.797  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=b69114d3, user=Anonymous] GET /api/v1/notices - 200 OK (38ms)
+2026-01-16 13:40:01.836  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=336f1f47, user=Anonymous] GET /api/v1/notices - 200 OK (32ms)
+2026-01-16 13:40:13.334  INFO 16264 --- [http-nio-8080-exec-3] h.b.d.inquiry.service.InquiryService     : [req=a3781347, user=Anonymous] 1:1 문의 등록 성공: inquiryId=3, name=김태현
+2026-01-16 13:40:13.342  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=a3781347, user=Anonymous] POST /api/v1/inquiries - 201 OK (14ms)
+2026-01-16 13:41:47.023  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=246ea107, user=Anonymous] GET /api/v1/notices - 200 OK (35ms)
+2026-01-16 13:41:47.071  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=da1e3ced, user=Anonymous] GET /api/v1/notices - 200 OK (40ms)
+2026-01-16 13:41:56.744  INFO 16264 --- [http-nio-8080-exec-6] h.b.d.inquiry.service.InquiryService     : [req=75868a26, user=Anonymous] 1:1 문의 등록 성공: inquiryId=4, name=김태현
+2026-01-16 13:41:56.753  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=75868a26, user=Anonymous] POST /api/v1/inquiries - 201 OK (15ms)
+2026-01-16 13:42:01.886  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=2fb95ef9, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:42:01.903  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=42e05e4e, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:42:04.681  INFO 16264 --- [http-nio-8080-exec-9] h.b.d.inquiry.service.InquiryService     : [req=0be992f7, user=Anonymous] 1:1 문의 삭제 완료: inquiryId=4
+2026-01-16 13:42:04.710  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=0be992f7, user=Anonymous] DELETE /api/v1/inquiries/4 - 200 OK (48ms)
+2026-01-16 13:42:05.449  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=c0054372, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:42:06.147  INFO 16264 --- [http-nio-8080-exec-1] h.b.d.inquiry.service.InquiryService     : [req=c350a8c3, user=Anonymous] 1:1 문의 삭제 완료: inquiryId=3
+2026-01-16 13:42:06.164  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=c350a8c3, user=Anonymous] DELETE /api/v1/inquiries/3 - 200 OK (21ms)
+2026-01-16 13:42:06.738  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=1013a74d, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:42:15.696  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=ef316a88, user=Anonymous] GET /api/v1/notices/19 - 200 OK (35ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 13:42:15.719  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=57f259ed, user=Anonymous] GET /api/v1/notices/19 - 200 OK (15ms) | noticeId=19, visited=true, ip=0:0:0:0:0:0:0:1
+2026-01-16 13:42:20.097  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=58247ce5, user=Anonymous] GET /api/v1/notices - 200 OK (31ms)
+2026-01-16 13:42:20.143  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=2cf6c1e9, user=Anonymous] GET /api/v1/notices - 200 OK (38ms)
+2026-01-16 13:42:28.239  INFO 16264 --- [http-nio-8080-exec-7] h.b.d.inquiry.service.InquiryService     : [req=68475699, user=Anonymous] 1:1 문의 등록 성공: inquiryId=5, name=김태현
+2026-01-16 13:42:28.246  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=68475699, user=Anonymous] POST /api/v1/inquiries - 201 OK (14ms)
+2026-01-16 13:42:40.775  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=daaf8432, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:42:40.791  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=07621139, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:44:08.647  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=c5f72624, user=Anonymous] GET /api/v1/inquiries - 200 OK (9ms)
+2026-01-16 13:44:55.260  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=206a9257, user=Anonymous] GET /api/v1/notices - 200 OK (36ms)
+2026-01-16 13:44:55.335  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=7f7e05a9, user=Anonymous] GET /api/v1/notices - 200 OK (32ms)
+2026-01-16 13:45:11.000  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=d83aa68f, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:45:11.018  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=357b8d0a, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:45:12.100  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=b8172f61, user=Anonymous] GET /api/v1/inquiries/5 - 200 OK (8ms)
+2026-01-16 13:45:12.115  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=dc777845, user=Anonymous] GET /api/v1/inquiries/5 - 200 OK (9ms)
+2026-01-16 13:45:13.868  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=be6489b6, user=Anonymous] GET /api/v1/inquiries - 200 OK (13ms)
+2026-01-16 13:45:13.884  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=077e77b6, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:45:15.831  INFO 16264 --- [http-nio-8080-exec-9] h.b.d.inquiry.service.InquiryService     : [req=333ebdb7, user=Anonymous] 1:1 문의 삭제 완료: inquiryId=5
+2026-01-16 13:45:15.840  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=333ebdb7, user=Anonymous] DELETE /api/v1/inquiries/5 - 200 OK (12ms)
+2026-01-16 13:45:16.231  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=6acbeb87, user=Anonymous] GET /api/v1/inquiries - 200 OK (8ms)
+2026-01-16 13:45:16.888  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=b9dbac00, user=Anonymous] GET /api/v1/inquiries/2 - 200 OK (7ms)
+2026-01-16 13:45:16.901  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=0dec3e24, user=Anonymous] GET /api/v1/inquiries/2 - 200 OK (7ms)
+2026-01-16 13:45:18.276  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=87c2b1bd, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:45:18.293  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=5800189d, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:45:19.231  INFO 16264 --- [http-nio-8080-exec-5] h.b.d.inquiry.service.InquiryService     : [req=249c8ae5, user=Anonymous] 1:1 문의 삭제 완료: inquiryId=2
+2026-01-16 13:45:19.241  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=249c8ae5, user=Anonymous] DELETE /api/v1/inquiries/2 - 200 OK (14ms)
+2026-01-16 13:45:19.632  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=daab49e3, user=Anonymous] GET /api/v1/inquiries - 200 OK (8ms)
+2026-01-16 13:45:20.180  INFO 16264 --- [http-nio-8080-exec-7] h.b.d.inquiry.service.InquiryService     : [req=ebcdaab6, user=Anonymous] 1:1 문의 삭제 완료: inquiryId=1
+2026-01-16 13:45:20.187  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=ebcdaab6, user=Anonymous] DELETE /api/v1/inquiries/1 - 200 OK (12ms)
+2026-01-16 13:45:20.511  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=ec02d970, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:45:31.763  INFO 16264 --- [http-nio-8080-exec-9] h.b.d.inquiry.service.InquiryService     : [req=73f5996d, user=Anonymous] 1:1 문의 등록 성공: inquiryId=6, name=김태현
+2026-01-16 13:45:31.771  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=73f5996d, user=Anonymous] POST /api/v1/inquiries - 201 OK (13ms)
+2026-01-16 13:45:35.551  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=186266f7, user=Anonymous] GET /api/v1/inquiries - 200 OK (8ms)
+2026-01-16 13:45:35.565  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=f3248c02, user=Anonymous] GET /api/v1/inquiries - 200 OK (7ms)
+2026-01-16 13:45:37.012  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=0b4a235d, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (8ms)
+2026-01-16 13:45:37.026  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=4e638ac8, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (7ms)
+2026-01-16 13:46:07.376  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=7548913e, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:46:07.391  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=43627840, user=Anonymous] GET /api/v1/inquiries - 200 OK (9ms)
+2026-01-16 13:46:20.105  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=e25d13f6, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (12ms)
+2026-01-16 13:46:20.123  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=02262a4d, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (9ms)
+2026-01-16 13:46:22.146  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=1483e583, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:46:22.169  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=85b00e36, user=Anonymous] GET /api/v1/inquiries - 200 OK (12ms)
+2026-01-16 13:46:43.243  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=ca334e5f, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (8ms)
+2026-01-16 13:46:43.260  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=9d8e0d89, user=Anonymous] GET /api/v1/inquiries/6 - 200 OK (8ms)
+2026-01-16 13:47:18.297  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=c3a838bc, user=Anonymous] GET /api/v1/inquiries - 200 OK (10ms)
+2026-01-16 13:47:18.314  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=32985e3e, user=Anonymous] GET /api/v1/inquiries - 200 OK (11ms)
+2026-01-16 13:49:00.176  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=434ee08f, user=Anonymous] GET /api/v1/notices - 200 OK (33ms)
+2026-01-16 13:49:00.211  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=dbe4c3e5, user=Anonymous] GET /api/v1/notices - 200 OK (26ms)
+2026-01-16 13:56:38.386  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=dcb97d07, user=Anonymous] GET /api/v1/notices - 200 OK (24ms)
+2026-01-16 13:56:38.436  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=5030e44b, user=Anonymous] GET /api/v1/notices - 200 OK (28ms)
+2026-01-16 13:56:51.260  INFO 16264 --- [http-nio-8080-exec-8] h.b.g.interceptor.LoggingInterceptor     : [req=b294b253, user=Anonymous] GET /api/v1/notices - 200 OK (30ms)
+2026-01-16 13:56:51.295  INFO 16264 --- [http-nio-8080-exec-9] h.b.g.interceptor.LoggingInterceptor     : [req=9ce1282e, user=Anonymous] GET /api/v1/notices - 200 OK (27ms)
+2026-01-16 13:56:53.596  INFO 16264 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=dae8887e, user=Anonymous] GET /api/v1/recruits - 200 OK (37ms)
+2026-01-16 13:56:53.614  INFO 16264 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=421c566b, user=Anonymous] GET /api/v1/recruits - 200 OK (13ms)
+2026-01-16 13:57:48.660  INFO 16264 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=ba41c212, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 13:57:48.679  INFO 16264 --- [http-nio-8080-exec-3] h.b.g.interceptor.LoggingInterceptor     : [req=a0d1aeb8, user=Anonymous] GET /api/v1/recruits - 200 OK (11ms)
+2026-01-16 14:00:01.999  INFO 16264 --- [http-nio-8080-exec-4] h.b.g.interceptor.LoggingInterceptor     : [req=2be2cf25, user=Anonymous] GET /api/v1/recruits - 200 OK (14ms)
+2026-01-16 14:00:02.015  INFO 16264 --- [http-nio-8080-exec-5] h.b.g.interceptor.LoggingInterceptor     : [req=7365789d, user=Anonymous] GET /api/v1/recruits - 200 OK (10ms)
+2026-01-16 14:00:04.028  INFO 16264 --- [http-nio-8080-exec-6] h.b.g.interceptor.LoggingInterceptor     : [req=a5e53cf3, user=Anonymous] GET /api/v1/notices - 200 OK (17ms)
+2026-01-16 14:00:04.051  INFO 16264 --- [http-nio-8080-exec-7] h.b.g.interceptor.LoggingInterceptor     : [req=9414ecf9, user=Anonymous] GET /api/v1/notices - 200 OK (18ms)
