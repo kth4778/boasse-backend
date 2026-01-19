@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: BOAS 서비스 통합 API
   description: BOAS 공지사항, 채용 및 제품 관리 시스템을 위한 API 명세서입니다.
-  version: 1.4.1
+  version: 1.7.0
 
 servers:
   - url: /api/v1
@@ -21,12 +21,80 @@ tags:
     description: 제품 관련 사용자 API
   - name: Product Admin
     description: 제품 관리자용 CRUD API
+  - name: Partner
+    description: 파트너(협력사) 관련 API
   - name: Inquiry
     description: 1:1 문의 관련 사용자 API
   - name: Inquiry Admin
     description: 1:1 문의 관리자용 API
 
 paths:
+  # --- Partner API ---
+  /partners:
+    get:
+      summary: 파트너 목록 조회
+      tags: [Partner]
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PartnerListResponse' }
+    post:
+      summary: 파트너 등록
+      tags: [Partner]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                link: { type: string, format: uri, description: "파트너사 웹사이트 URL" }
+                logo: { type: string, format: binary, description: "로고 이미지 파일" }
+              required: [name, logo]
+      responses:
+        '201':
+          description: 등록 성공
+
+  /partners/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      summary: 파트너 상세 조회
+      tags: [Partner]
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PartnerItem' }
+    put:
+      summary: 파트너 수정
+      tags: [Partner]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                link: { type: string, format: uri }
+                logo: { type: string, format: binary, description: "변경할 로고 이미지 (선택)" }
+      responses:
+        '200':
+          description: 수정 성공
+    delete:
+      summary: 파트너 삭제
+      tags: [Partner]
+      responses:
+        '200':
+          description: 삭제 성공
+
   # --- Inquiry API ---
   /inquiries:
     post:
@@ -91,6 +159,13 @@ paths:
     get:
       summary: 공지사항 목록 조회
       tags: [Notice]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 10 }
       responses:
         '200':
           description: 성공
@@ -115,10 +190,47 @@ paths:
         '201':
           description: 등록 성공
 
+  /notices/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      summary: 공지사항 상세 조회
+      tags: [Notice]
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/NoticeDetailResponse' }
+    put:
+      summary: 공지사항 수정
+      tags: [Notice Admin]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                content: { type: string }
+                files: { type: array, items: { type: string, format: binary } }
+      responses:
+        '200':
+          description: 수정 성공
+    delete:
+      summary: 공지사항 삭제
+      tags: [Notice Admin]
+      responses:
+        '200':
+          description: 삭제 성공
+
   # --- Recruit API ---
   /recruits:
     get:
-      summary: 채용공고 목록 조회 (업무/요건/링크 포함)
+      summary: 채용공고 목록 조회
       tags: [Recruit]
       responses:
         '200':
@@ -128,7 +240,7 @@ paths:
               schema: { $ref: '#/components/schemas/RecruitListResponse' }
 
     post:
-      summary: 채용공고 작성 (연관 테이블 자동 저장)
+      summary: 채용공고 작성
       tags: [Recruit Admin]
       requestBody:
         required: true
@@ -207,23 +319,88 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
+                category: { type: string, enum: [Smart Mobility, Smart Factory, Smart Farm, Smart Building] }
                 title: { type: string }
-                category: { type: string }
-                image: { type: string }
-                description: { type: string }
-                detail: { type: string }
-              required: [title, category]
+                description: { type: string, description: "리스트용 짧은 설명" }
+                detail: { type: string, description: "상세 페이지 내용" }
+                image: { type: string, format: binary, description: "제품 대표 이미지 파일" }
+                specs: 
+                  type: string
+                  description: "Key Performance 지표 (JSON String) - [{icon, label, highlight, text}]"
+                features:
+                  type: string
+                  description: "Detail Features 목록 (JSON String) - [{title, desc}]"
+              required: [category, title, description, image]
       responses:
         '201':
           description: 등록 성공
 
+  /products/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      summary: 제품 상세 조회
+      tags: [Product]
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ProductDetailResponse' }
+    put:
+      summary: 제품 수정
+      tags: [Product Admin]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                category: { type: string }
+                title: { type: string }
+                description: { type: string }
+                detail: { type: string }
+                image: { type: string, format: binary, description: "변경할 이미지 파일 (선택)" }
+                specs: { type: string, description: "JSON String" }
+                features: { type: string, description: "JSON String" }
+      responses:
+        '200':
+          description: 수정 성공
+    delete:
+      summary: 제품 삭제
+      tags: [Product Admin]
+      responses:
+        '200':
+          description: 삭제 성공
+
 components:
   schemas:
-    # --- Recruit Schemas (지원링크 포함 필수!) ---
+    # --- Partner Schemas ---
+    PartnerItem:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        link: { type: string, format: uri }
+        logo: { type: string, description: "로고 이미지 URL" }
+        createdAt: { type: string, format: date-time }
+
+    PartnerListResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/PartnerItem' }
+
+    # --- Recruit Schemas ---
     RecruitItem:
       type: object
       properties:
@@ -232,7 +409,7 @@ components:
         status: { type: string }
         location: { type: string }
         type: { type: string }
-        applyLink: { type: string, format: uri, description: "지원 페이지 외부 링크" }
+        applyLink: { type: string }
         recruit_duties: { type: array, items: { type: string } }
         recruit_requirements: { type: array, items: { type: string } }
         createdAt: { type: string, format: date-time }
@@ -251,10 +428,6 @@ components:
         success: { type: boolean }
         data: { $ref: '#/components/schemas/RecruitItem' }
 
-    # --- 기타 공통 스키마 생략 ---
-    NoticeListResponse: { type: object, properties: { success: { type: boolean }, data: { type: object } } }
-    ProductListResponse: { type: object, properties: { success: { type: boolean }, data: { type: array } } }
-    
     # --- Inquiry Schemas ---
     InquiryItem:
       type: object
@@ -282,3 +455,79 @@ components:
                 totalCount: { type: integer }
                 totalPages: { type: integer }
                 currentPage: { type: integer }
+
+    # --- Notice Schemas ---
+    NoticeItem:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        content: { type: string }
+        viewCount: { type: integer }
+        createdAt: { type: string, format: date-time }
+    
+    NoticeListResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
+          type: object
+          properties:
+            notices: 
+              type: array
+              items: { $ref: '#/components/schemas/NoticeItem' }
+            pagination:
+              type: object
+              properties:
+                totalCount: { type: integer }
+                totalPages: { type: integer }
+                currentPage: { type: integer }
+
+    NoticeDetailResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data: { $ref: '#/components/schemas/NoticeItem' }
+
+    # --- Product Schemas ---
+    ProductItem:
+      type: object
+      properties:
+        id: { type: integer }
+        category: { type: string }
+        title: { type: string }
+        description: { type: string }
+        detail: { type: string }
+        image: { type: string }
+        isMainFeatured: { type: boolean, description: "메인 페이지 노출 여부" }
+        specs: 
+          type: array
+          items: 
+            type: object
+            properties:
+              icon: { type: string }
+              label: { type: string }
+              highlight: { type: string }
+              text: { type: string }
+        features:
+          type: array
+          items:
+            type: object
+            properties:
+              title: { type: string }
+              desc: { type: string }
+        createdAt: { type: string, format: date-time }
+
+    ProductListResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/ProductItem' }
+
+    ProductDetailResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data: { $ref: '#/components/schemas/ProductItem' }
