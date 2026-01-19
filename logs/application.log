@@ -614,3 +614,8 @@ Caused by: org.hibernate.StaleStateException: Unexpected row count (expected row
 2026-01-19 14:13:24.316  INFO 26800 --- [http-nio-8080-exec-2] h.b.g.interceptor.LoggingInterceptor     : [req=100bb1ee, user=Anonymous] GET /api/v1/notices - 200 OK (12ms)
 2026-01-19 14:13:25.490  INFO 26800 --- [http-nio-8080-exec-10] h.b.g.interceptor.LoggingInterceptor     : [req=9ee28c55, user=Anonymous] GET /api/v1/inquiries - 200 OK (8ms)
 2026-01-19 14:13:25.503  INFO 26800 --- [http-nio-8080-exec-1] h.b.g.interceptor.LoggingInterceptor     : [req=d111d9bc, user=Anonymous] GET /api/v1/inquiries - 200 OK (5ms)
+2026-01-19 14:48:33.728  INFO 26800 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-19 14:48:34.088  INFO 26800 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : [req=SYSTEM, user=ANON] Graceful shutdown complete
+2026-01-19 14:48:34.103  INFO 26800 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : [req=SYSTEM, user=ANON] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-19 14:48:34.110  INFO 26800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown initiated...
+2026-01-19 14:48:34.120  INFO 26800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : [req=SYSTEM, user=ANON] HikariPool-1 - Shutdown completed.
