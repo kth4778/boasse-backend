@@ -4,10 +4,10 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 @Data
-public class ProductCreateRequest {
+public class ProductUpdateRequest {
     private String title;
     private String category;
-    private MultipartFile image;
+    private MultipartFile image; // Nullable
     private String description;
     private String detail;
     private String specs; // JSON String

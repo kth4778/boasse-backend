@@ -26,13 +26,15 @@ public class NoticeController {
     private final NoticeService noticeService;
 
     /**
-     * 공지사항 목록 조회
+     * 공지사항 목록 조회 (페이징 적용)
      */
     @GetMapping
     public ResponseEntity<NoticeListResponse> getNotices(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int limit,
             jakarta.servlet.http.HttpServletRequest request) {
         
-        NoticeListResponse response = noticeService.getNotices();
+        NoticeListResponse response = noticeService.getNotices(page, limit);
         return ResponseEntity.ok(response);
     }
 
@@ -88,7 +90,7 @@ public class NoticeController {
     }
 
     /**
-     * 공지사항 작성 (관리자 전용 - 비밀번호 체크)
+     * 공지사항 작성
      */
     @PostMapping
     public ResponseEntity<NoticeDetailResponse> createNotice(
@@ -105,7 +107,7 @@ public class NoticeController {
     }
 
     /**
-     * 공지사항 수정 (관리자 전용 - 비밀번호 체크)
+     * 공지사항 수정
      */
     @PutMapping("/{id}")
     public ResponseEntity<NoticeDetailResponse> updateNotice(
@@ -121,7 +123,7 @@ public class NoticeController {
     }
 
     /**
-     * 공지사항 삭제 (관리자 전용 - 비밀번호 체크)
+     * 공지사항 삭제
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> deleteNotice(
@@ -142,8 +144,4 @@ public class NoticeController {
         request.setAttribute("logData", "noticeId=" + id);
         return ResponseEntity.ok(response);
     }
-
-    /**
-     * 비밀번호 검증 메서드 (삭제됨)
-     */
 }

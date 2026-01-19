@@ -28,16 +28,21 @@ public class Attachment {
     @Column(nullable = false)
     private String url; // 다운로드 URL 혹은 경로
 
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] fileData;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "notice_id")
     private Notice notice;
 
     @Builder
-    public Attachment(String filename, String originalName, Long size, String url) {
+    public Attachment(String filename, String originalName, Long size, String url, byte[] fileData) {
         this.filename = filename;
         this.originalName = originalName;
         this.size = size;
         this.url = url;
+        this.fileData = fileData;
     }
 
     // 연관관계 설정을 위한 Setter (Notice 쪽에서 호출)

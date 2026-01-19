@@ -33,19 +33,30 @@ public class NoticeService {
     private final FileStore fileStore;
 
     /**
-     * 공지사항 목록 조회
+     * 공지사항 목록 조회 (페이징)
      */
-    public NoticeListResponse getNotices() {
-        List<Notice> notices = noticeRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+    public NoticeListResponse getNotices(int page, int limit) {
+        Pageable pageable = PageRequest.of(page - 1, limit, Sort.by(Sort.Direction.DESC, "createdAt"));
+        Page<Notice> noticePage = noticeRepository.findAll(pageable);
 
-        List<NoticeItem> noticeItems = notices.stream()
+        List<NoticeItem> noticeItems = noticePage.getContent().stream()
                 .map(NoticeItem::from)
                 .collect(Collectors.toList());
+        
+        Pagination pagination = Pagination.builder()
+                .currentPage(page)
+                .totalPages(noticePage.getTotalPages())
+                .totalCount(noticePage.getTotalElements())
+                .limit(limit)
+                .hasNext(noticePage.hasNext())
+                .hasPrev(noticePage.hasPrevious())
+                .build();
 
         return NoticeListResponse.builder()
                 .success(true)
                 .data(NoticeListResponse.Data.builder()
                         .notices(noticeItems)
+                        .pagination(pagination)
                         .build())
                 .build();
     }
@@ -135,7 +146,7 @@ public class NoticeService {
         }
 
         Notice savedNotice = noticeRepository.save(notice);
-        log.info("게시물 작성 성공: noticeId={}, title=\"{}\"", savedNotice.getId(), savedNotice.getTitle());
+        log.info("게시물 작성 성공: noticeId={}, title=\" ঐতিহ্য \"", savedNotice.getId(), savedNotice.getTitle());
         return savedNotice.getId();
     }
 
@@ -146,10 +157,10 @@ public class NoticeService {
     public Long updateNotice(Long id, NoticeUpdateRequest request) throws IOException {
         Notice notice = findNoticeByIdOrThrow(id);
 
-        log.debug("변경 전: title=\"{}\"", notice.getTitle());
+        log.debug("변경 전: title=\" ঐতিহ্য \"", notice.getTitle());
         // 1. 기본 정보 수정
         notice.update(request.getTitle(), request.getContent());
-        log.debug("변경 후: title=\"{}\"", request.getTitle());
+        log.debug("변경 후: title=\" ঐতিহ্য \"", request.getTitle());
 
         // 2. 파일 삭제 처리
         if (StringUtils.hasText(request.getRemoveFileIds())) {
@@ -210,6 +221,6 @@ public class NoticeService {
 
         // DB 삭제 (Cascade 설정에 의해 Attachment 엔티티도 함께 삭제됨)
         noticeRepository.delete(notice);
-        log.info("게시물 삭제 완료: noticeId={}, title=\"{}\"", id, notice.getTitle());
+        log.info("게시물 삭제 완료: noticeId={}, title=\" ঐতিহ্য \"", id, notice.getTitle());
     }
 }

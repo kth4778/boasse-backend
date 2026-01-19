@@ -1,34 +1,22 @@
 package hello.boassebackend.global.util;
 
 import hello.boassebackend.domain.notice.entity.Attachment;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Value;
+import hello.boassebackend.domain.notice.repository.AttachmentRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 public class FileStore {
 
-    @Value("${file.dir:uploads}")
-    private String dirName;
+    private final AttachmentRepository attachmentRepository;
 
-    private String fileDir;
-
-    @PostConstruct
-    public void init() {
-        // 프로젝트 루트 경로(user.dir)를 기준으로 uploads 폴더의 절대 경로를 생성합니다.
-        // 예: C:/BoasseProject/boasse-backend/uploads/
-        this.fileDir = System.getProperty("user.dir") + File.separator + dirName + File.separator;
-    }
-
-    public String getFullPath(String filename) {
-        return fileDir + filename;
-    }
-
+    @Transactional
     public Attachment storeFile(MultipartFile multipartFile) throws IOException {
         if (multipartFile.isEmpty()) {
             return null;
@@ -37,36 +25,33 @@ public class FileStore {
         String originalFilename = multipartFile.getOriginalFilename();
         String storeFileName = createStoreFileName(originalFilename);
         long size = multipartFile.getSize();
-
-        // 디렉토리 생성 (없으면 생성)
-        File directory = new File(fileDir);
-        if (!directory.exists()) {
-            boolean created = directory.mkdirs();
-            if (!created && !directory.exists()) {
-                 throw new IOException("파일 업로드 디렉토리를 생성할 수 없습니다: " + fileDir);
-            }
-        }
-        
-        // 파일 저장 (절대 경로 사용)
-        multipartFile.transferTo(new File(getFullPath(storeFileName)));
+        byte[] fileData = multipartFile.getBytes(); // 파일 데이터를 바이트 배열로 변환
 
         // URL은 다운로드용 경로
-        String url = "/api/v1/files/" + storeFileName; 
+        String url = "/api/v1/files/" + storeFileName;
 
-        return Attachment.builder()
+        Attachment attachment = Attachment.builder()
                 .originalName(originalFilename)
                 .filename(storeFileName)
                 .size(size)
                 .url(url)
+                .fileData(fileData) // DB에 바이너리 데이터 저장
                 .build();
+        
+        // DB에 즉시 저장하여 데이터 영속화 (Product 등 연관관계 없는 곳에서도 사용 가능하도록)
+        return attachmentRepository.save(attachment);
     }
 
-    // 물리 파일 삭제
+    // DB 데이터 삭제
+    @Transactional
     public void deleteFile(String filename) {
-        File file = new File(getFullPath(filename));
-        if (file.exists()) {
-            file.delete();
-        }
+        attachmentRepository.findByFilename(filename)
+                .ifPresent(attachmentRepository::delete);
+    }
+
+    // 파일 경로 조회 메서드는 DB 저장 방식에서 의미가 없으므로 더미 반환하거나 제거
+    public String getFullPath(String filename) {
+        return "DB_STORAGE:" + filename;
     }
 
     private String createStoreFileName(String originalFilename) {
@@ -77,7 +62,7 @@ public class FileStore {
 
     private String extractExt(String originalFilename) {
         int pos = originalFilename.lastIndexOf(".");
-        if (pos == -1) return ""; // 확장자 없는 경우 처리
+        if (pos == -1) return "";
         return originalFilename.substring(pos + 1);
     }
 }

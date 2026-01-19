@@ -1,6 +1,5 @@
-package hello.boassebackend.domain.notice.dto;
+package hello.boassebackend.domain.partner.dto;
 
-import hello.boassebackend.global.common.Pagination;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NoticeListResponse {
+public class PartnerListResponse {
     private boolean success;
     private Data data;
 
@@ -21,7 +20,6 @@ public class NoticeListResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Data {
-        private List<NoticeItem> notices;
-        private Pagination pagination;
+        private List<PartnerItem> items;
     }
 }

@@ -38,25 +38,44 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String detail; // 상세 설명
 
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String specs; // JSON String
+
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String features; // JSON String
+
+    @Column(name = "is_main_featured", nullable = false)
+    private boolean isMainFeatured;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @Builder
-    public Product(String title, ProductCategory category, String image, String description, String detail) {
+    public Product(String title, ProductCategory category, String image, String description, String detail, String specs, String features, boolean isMainFeatured) {
         this.title = title;
         this.category = category;
         this.image = image;
         this.description = description;
         this.detail = detail;
+        this.specs = specs;
+        this.features = features;
+        this.isMainFeatured = isMainFeatured;
     }
 
-    public void update(String title, ProductCategory category, String image, String description, String detail) {
+    public void update(String title, ProductCategory category, String image, String description, String detail, String specs, String features, boolean isMainFeatured) {
         this.title = title;
         this.category = category;
-        this.image = image;
+        if (image != null && !image.isEmpty()) {
+            this.image = image;
+        }
         this.description = description;
         this.detail = detail;
+        this.specs = specs;
+        this.features = features;
+        this.isMainFeatured = isMainFeatured;
     }
 
     public enum ProductCategory {

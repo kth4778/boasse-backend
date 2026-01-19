@@ -3,12 +3,14 @@ package hello.boassebackend.domain.product.controller;
 import hello.boassebackend.domain.product.dto.ProductCreateRequest;
 import hello.boassebackend.domain.product.dto.ProductDetailResponse;
 import hello.boassebackend.domain.product.dto.ProductListResponse;
+import hello.boassebackend.domain.product.dto.ProductUpdateRequest;
 import hello.boassebackend.domain.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +46,10 @@ public class ProductController {
      * 제품 등록
      */
     @PostMapping
-    public ResponseEntity<ProductDetailResponse> createProduct(@RequestBody ProductCreateRequest requestDto, jakarta.servlet.http.HttpServletRequest request) {
+    public ResponseEntity<ProductDetailResponse> createProduct(
+            @ModelAttribute ProductCreateRequest requestDto, 
+            jakarta.servlet.http.HttpServletRequest request) throws IOException {
+        
         Long productId = productService.createProduct(requestDto);
         ProductDetailResponse response = productService.getProductDetail(productId);
         
@@ -57,7 +62,11 @@ public class ProductController {
      * 제품 정보 수정
      */
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDetailResponse> updateProduct(@PathVariable Long id, @RequestBody ProductCreateRequest requestDto, jakarta.servlet.http.HttpServletRequest request) {
+    public ResponseEntity<ProductDetailResponse> updateProduct(
+            @PathVariable Long id, 
+            @ModelAttribute ProductUpdateRequest requestDto, 
+            jakarta.servlet.http.HttpServletRequest request) throws IOException {
+        
         Long productId = productService.updateProduct(id, requestDto);
         ProductDetailResponse response = productService.getProductDetail(productId);
 
