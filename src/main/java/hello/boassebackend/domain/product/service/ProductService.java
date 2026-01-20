@@ -58,11 +58,16 @@ public class ProductService {
     public Long createProduct(ProductCreateRequest request) throws IOException {
         String imageUrl = "";
         
+        // 1. 파일 업로드 우선 처리
         if (request.getImage() != null && !request.getImage().isEmpty()) {
             Attachment attachment = fileStore.storeFile(request.getImage());
             if (attachment != null) {
                 imageUrl = attachment.getUrl();
             }
+        } 
+        // 2. 파일이 없으면 직접 입력된 URL 사용
+        else if (request.getImageUrl() != null && !request.getImageUrl().isEmpty()) {
+            imageUrl = request.getImageUrl();
         }
 
         Product.ProductCategory category = Product.ProductCategory.fromString(request.getCategory());
@@ -95,6 +100,7 @@ public class ProductService {
 
         String imageUrl = product.getImage(); // 기본값은 기존 이미지
         
+        // 1. 새 파일이 업로드된 경우
         if (request.getImage() != null && !request.getImage().isEmpty()) {
             // 기존 파일 삭제
             deleteOldFile(product.getImage());
@@ -102,6 +108,14 @@ public class ProductService {
             Attachment attachment = fileStore.storeFile(request.getImage());
             if (attachment != null) {
                 imageUrl = attachment.getUrl();
+            }
+        }
+        // 2. 파일은 없지만 새 이미지 URL이 문자열로 들어온 경우 (외부 링크 등)
+        else if (request.getImageUrl() != null && !request.getImageUrl().isEmpty()) {
+            // URL이 변경되었다면 기존 파일 정리 (필요 시) 후 업데이트
+            if (!request.getImageUrl().equals(product.getImage())) {
+                deleteOldFile(product.getImage());
+                imageUrl = request.getImageUrl();
             }
         }
 

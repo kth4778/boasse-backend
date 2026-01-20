@@ -20,10 +20,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException e) {
         log.error("IllegalArgumentException: {}", e.getMessage());
-        // 메시지에 "찾을 수 없습니다"가 포함되면 404, 아니면 400 등으로 분기 가능.
-        // 여기서는 명세서의 NotFoundError를 위해 404로 매핑합니다.
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ErrorResponse.of("NOT_FOUND", e.getMessage()));
+        
+        if (e.getMessage() != null && e.getMessage().contains("찾을 수 없습니다")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(ErrorResponse.of("NOT_FOUND", e.getMessage()));
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse.of("BAD_REQUEST", e.getMessage()));
     }
 
     /**

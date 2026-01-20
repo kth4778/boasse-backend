@@ -8,6 +8,7 @@ public class ProductCreateRequest {
     private String title;
     private String category;
     private MultipartFile image;
+    private String imageUrl; // 외부 이미지 URL 지원
     private String description;
     private String detail;
     private String specs; // JSON String
