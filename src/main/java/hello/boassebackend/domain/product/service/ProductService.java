@@ -65,9 +65,14 @@ public class ProductService {
             }
         }
 
+        Product.ProductCategory category = Product.ProductCategory.fromString(request.getCategory());
+        if (category == null) {
+            throw new IllegalArgumentException("유효하지 않은 카테고리입니다: " + request.getCategory());
+        }
+
         Product product = Product.builder()
                 .title(request.getTitle())
-                .category(Product.ProductCategory.fromString(request.getCategory()))
+                .category(category)
                 .image(imageUrl)
                 .description(request.getDescription())
                 .detail(request.getDetail())
@@ -100,9 +105,14 @@ public class ProductService {
             }
         }
 
+        Product.ProductCategory category = Product.ProductCategory.fromString(request.getCategory());
+        if (category == null) {
+            throw new IllegalArgumentException("유효하지 않은 카테고리입니다: " + request.getCategory());
+        }
+
         product.update(
                 request.getTitle(),
-                Product.ProductCategory.fromString(request.getCategory()),
+                category,
                 imageUrl,
                 request.getDescription(),
                 request.getDetail(),
