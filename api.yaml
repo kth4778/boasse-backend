@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: BOAS 서비스 통합 API
   description: BOAS 공지사항, 채용 및 제품 관리 시스템을 위한 API 명세서입니다.
-  version: 1.7.0
+  version: 1.7.1
 
 servers:
   - url: /api/v1
@@ -327,14 +327,16 @@ paths:
                 title: { type: string }
                 description: { type: string, description: "리스트용 짧은 설명" }
                 detail: { type: string, description: "상세 페이지 내용" }
-                image: { type: string, format: binary, description: "제품 대표 이미지 파일" }
+                image: { type: string, format: binary, description: "제품 대표 이미지 파일 (직접 업로드)" }
+                imageUrl: { type: string, description: "외부 이미지 URL (image 파일이 없을 때 사용)" }
+                isMainFeatured: { type: boolean, default: false, description: "메인 페이지 노출 여부" }
                 specs: 
                   type: string
                   description: "Key Performance 지표 (JSON String) - [{icon, label, highlight, text}]"
                 features:
                   type: string
                   description: "Detail Features 목록 (JSON String) - [{title, desc}]"
-              required: [category, title, description, image]
+              required: [category, title, description]
       responses:
         '201':
           description: 등록 성공
@@ -368,6 +370,8 @@ paths:
                 description: { type: string }
                 detail: { type: string }
                 image: { type: string, format: binary, description: "변경할 이미지 파일 (선택)" }
+                imageUrl: { type: string, description: "변경할 외부 이미지 URL (선택)" }
+                isMainFeatured: { type: boolean, description: "메인 페이지 노출 여부" }
                 specs: { type: string, description: "JSON String" }
                 features: { type: string, description: "JSON String" }
       responses:
