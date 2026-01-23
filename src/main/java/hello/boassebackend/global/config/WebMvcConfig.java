@@ -1,5 +1,6 @@
 package hello.boassebackend.global.config;
 
+import hello.boassebackend.global.interceptor.AuthInterceptor;
 import hello.boassebackend.global.interceptor.LoggingInterceptor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     private final LoggingInterceptor loggingInterceptor;
+    private final AuthInterceptor authInterceptor;
 
     @Value("${cors.allowed-origins}")
     private String[] allowedOrigins;
@@ -21,6 +23,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loggingInterceptor)
                 .addPathPatterns("/api/**"); // API 요청에 대해서만 로깅
+        
+        registry.addInterceptor(authInterceptor)
+                .addPathPatterns("/api/v1/**"); // API v1 경로에 대해 인증 인터셉터 적용
     }
 
     @Override

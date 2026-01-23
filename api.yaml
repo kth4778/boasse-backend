@@ -2,13 +2,15 @@ openapi: 3.0.3
 info:
   title: BOAS 서비스 통합 API
   description: BOAS 공지사항, 채용 및 제품 관리 시스템을 위한 API 명세서입니다.
-  version: 1.7.1
+  version: 1.8.1
 
 servers:
   - url: /api/v1
     description: 기본 API 경로
 
 tags:
+  - name: Auth
+    description: 관리자 인증 및 세션 관리 API
   - name: Notice
     description: 공지사항 관련 사용자 API
   - name: Notice Admin
@@ -28,7 +30,50 @@ tags:
   - name: Inquiry Admin
     description: 1:1 문의 관리자용 API
 
+# 전역 보안 설정 (Admin 태그가 붙은 API에 적용 권장)
+security:
+  - {}
+  
 paths:
+  # --- Auth API (Password Only) ---
+  /auth/login:
+    post:
+      summary: 관리자 로그인
+      description: 비밀번호를 검증하여 JWT 액세스 토큰을 발급합니다.
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginRequest' }
+      responses:
+        '200':
+          description: 로그인 성공 (토큰 발급)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '401':
+          description: 인증 실패 (비밀번호 불일치)
+  
+  /auth/verify:
+    get:
+      summary: 토큰 유효성 검증
+      description: 헤더에 포함된 JWT 토큰이 유효한지 확인합니다. (페이지 새로고침 시 사용)
+      tags: [Auth]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 유효한 토큰
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean, example: true }
+        '401':
+          description: 유효하지 않은 토큰
+
   # --- Partner API ---
   /partners:
     get:
@@ -43,6 +88,8 @@ paths:
     post:
       summary: 파트너 등록
       tags: [Partner]
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -76,6 +123,8 @@ paths:
     put:
       summary: 파트너 수정
       tags: [Partner]
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           multipart/form-data:
@@ -91,6 +140,8 @@ paths:
     delete:
       summary: 파트너 삭제
       tags: [Partner]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 삭제 성공
@@ -118,6 +169,8 @@ paths:
     get:
       summary: 문의 목록 조회
       tags: [Inquiry Admin]
+      security:
+        - bearerAuth: []
       parameters:
         - name: page
           in: query
@@ -141,6 +194,8 @@ paths:
     get:
       summary: 문의 상세 조회
       tags: [Inquiry Admin]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 성공
@@ -150,6 +205,8 @@ paths:
     delete:
       summary: 문의 삭제
       tags: [Inquiry Admin]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 삭제 성공
@@ -175,6 +232,8 @@ paths:
     post:
       summary: 공지사항 작성
       tags: [Notice Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -208,6 +267,8 @@ paths:
     put:
       summary: 공지사항 수정
       tags: [Notice Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           multipart/form-data:
@@ -223,6 +284,8 @@ paths:
     delete:
       summary: 공지사항 삭제
       tags: [Notice Admin]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 삭제 성공
@@ -242,6 +305,8 @@ paths:
     post:
       summary: 채용공고 작성
       tags: [Recruit Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -279,6 +344,8 @@ paths:
     put:
       summary: 채용공고 수정
       tags: [Recruit Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -298,6 +365,8 @@ paths:
     delete:
       summary: 채용공고 삭제
       tags: [Recruit Admin]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 삭제 성공
@@ -316,6 +385,8 @@ paths:
     post:
       summary: 제품 등록
       tags: [Product Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -359,6 +430,8 @@ paths:
     put:
       summary: 제품 수정
       tags: [Product Admin]
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           multipart/form-data:
@@ -380,12 +453,42 @@ paths:
     delete:
       summary: 제품 삭제
       tags: [Product Admin]
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: 삭제 성공
 
 components:
+  # --- Security Schemes ---
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
   schemas:
+    # --- Auth Schemas (Modified: Password Only) ---
+    LoginRequest:
+      type: object
+      properties:
+        password:
+          type: string
+          description: 관리자 비밀번호
+          example: secure_password_123!
+      required: [password]
+
+    AuthResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
+          type: object
+          properties:
+            accessToken: 
+              type: string
+              description: JWT 액세스 토큰
+
     # --- Partner Schemas ---
     PartnerItem:
       type: object

@@ -41,6 +41,16 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 401 Unauthorized (Login Failed)
+     */
+    @ExceptionHandler(LoginFailedException.class)
+    public ResponseEntity<ErrorResponse> handleLoginFailedException(LoginFailedException e) {
+        log.error("LoginFailedException: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ErrorResponse.of("UNAUTHORIZED", e.getMessage()));
+    }
+
+    /**
      * 500 Internal Server Error
      */
     @ExceptionHandler(Exception.class)
